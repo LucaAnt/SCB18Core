@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Natural parts - can be harvested, or grown in the organ vat -->
+	
+	<ThingDef ParentName="BodyPartNaturalBase">
+		<defName>Eye</defName>
+		<label>eye</label>
+		<description>A replacement eye fabricated from biomatter.</description>
+		<graphicData>
+			<texPath>Things/Item/BodyPart/MedOrgan</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>504</MarketValue>
+			<Mass>0.3</Mass>
+		</statBases>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="BodyPartNaturalBase">
+		<defName>Ear</defName>
+		<label>ear</label>
+		<description>A replacement ear fabricated from biomatter.</description>
+		<graphicData>
+			<texPath>Things/Item/BodyPart/MedOrgan</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>504</MarketValue>
+			<Mass>0.3</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<ThingDef ParentName="BodyPartNaturalBase">
+		<defName>Nose</defName>
+		<label>nose</label>
+		<description>A replacement nose fabricated from biomatter.</description>
+		<graphicData>
+			<texPath>Things/Item/BodyPart/MedOrgan</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>504</MarketValue>
+			<Mass>0.3</Mass>
+		</statBases>
+	</ThingDef>
+  
+	<ThingDef ParentName="BodyPartNaturalBase">
+		<defName>Stomach</defName>
+		<label>stomach</label>
+		<description>Digests food and turns it into energy and nutrients.</description>
+		<graphicData>
+			<texPath>Things/Item/BodyPart/MedOrgan</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>504</MarketValue>
+			<Mass>1</Mass>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="BodyPartNaturalBase">
+		<defName>Leg</defName>
+		<label>Leg</label>
+		<description>Natural leg, provide natural locomotory functions, vat grown biocompatible.</description>
+		<graphicData>
+			<texPath>Things/Item/BodyPart/MedOrgan</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>504</MarketValue>
+			<Mass>1</Mass>
+		</statBases>
+	</ThingDef>
+	
+	<ThingDef ParentName="BodyPartNaturalBase">
+		<defName>Arm</defName>
+		<label>Arm</label>
+		<description>Natural arm, provide natural manipulation functions,vat grown biocompatible.</description>
+		<graphicData>
+			<texPath>Things/Item/BodyPart/MedOrgan</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>504</MarketValue>
+			<Mass>1</Mass>
+		</statBases>
+	</ThingDef>
+	<!-- artificial - simple prosthetics -->
+
+	<ThingDef ParentName="BodyPartArtificialBase">
+		<defName>SteelDenture</defName>
+		<label>steel denture</label>
+		<description>Simple but durable jaw prosthesis.</description>
+		<graphicData>
+			<texPath>Things/Item/BodyPart/MedProstheticSimple</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>72</MarketValue>
+			<Mass>0.3</Mass>
+		</statBases>
+		<techHediffsTags>
+		<li>Simple</li>
+		</techHediffsTags>
+	</ThingDef>
+	
+	<!-- artificial - advanced prosthetics -->
+	
+	<ThingDef ParentName="BodyPartArtificialBase">
+		<defName>AdvancedProstheticArm</defName>
+		<label>advanced prosthetic arm</label>
+		<description>Advanced prosthesis made to replace a missing arm.  Very comfortable and quite efficient.</description>
+		<graphicData>
+			<texPath>Things/Item/BodyPart/MedProstheticAdvanced</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>792</MarketValue>
+			<Mass>5</Mass>
+		</statBases>
+		<techHediffsTags>
+		  <li>Medium</li>
+		</techHediffsTags>
+	</ThingDef>
+	
+	<ThingDef ParentName="BodyPartArtificialBase">
+		<defName>AdvancedProstheticLeg</defName>
+		<label>advanced prosthetic leg</label>
+		<description>Advanced prosthesis made to replace a missing leg.  Very comfortable and quite efficient.</description>
+		<graphicData>
+			<texPath>Things/Item/BodyPart/MedProstheticAdvanced</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>1512</MarketValue>
+			<Mass>8</Mass>
+		</statBases>
+		<techHediffsTags>
+		  <li>Medium</li>
+		</techHediffsTags>
+	</ThingDef>
+	
+	<ThingDef ParentName="BodyPartArtificialBase">
+		<defName>PlasteelDenture</defName>
+		<label>plasteel denture</label>
+		<description>Advanced prosthesis made to replace a missing jaw.  Very comfortable and quite efficient.</description>
+		<graphicData>
+			<texPath>Things/Item/BodyPart/MedProstheticAdvanced</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>515</MarketValue>
+			<Mass>0.3</Mass>
+		</statBases>
+		<techHediffsTags>
+		  <li>Medium</li>
+		</techHediffsTags>
+	</ThingDef>
+	
+	<!-- artificial - bionics -->
+
+	<ThingDef ParentName="BodyPartArtificialBase">
+		<defName>BionicEar</defName>
+		<label>bionic ear</label>
+		<description>Advanced piece of technology made not only to fully replace a natural ear, but also to give supernatural hearing.</description>
+		<graphicData>
+			<texPath>Things/Item/BodyPart/MedBionic</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<itemGeneratorTags>
+		  <li>SpecialReward</li>
+		</itemGeneratorTags>
+		<statBases>
+			<MarketValue>1850</MarketValue>
+			<Mass>0.3</Mass>
+		</statBases>
+		<techHediffsTags>
+		  <li>Advanced</li>
+		</techHediffsTags>
+	</ThingDef>
+
+	<ThingDef ParentName="BodyPartArtificialBase">
+		<defName>BionicSpine</defName>
+		<label>bionic spine</label>
+		<description>Advanced piece of technology made not only to fully replace the spine, but also to give supernatural strength and agility.</description>
+		<graphicData>
+			<texPath>Things/Item/BodyPart/MedBionic</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<itemGeneratorTags>
+		  <li>SpecialReward</li>
+		</itemGeneratorTags>
+		<statBases>
+			<MarketValue>4198</MarketValue>
+			<Mass>7</Mass>
+		</statBases>
+		<techHediffsTags>
+		  <li>Advanced</li>
+		</techHediffsTags>
+	</ThingDef>
+	
+	<ThingDef ParentName="BodyPartArtificialBase">
+		<defName>BionicBrain</defName>
+		<label>Bionic brain implant</label>
+		<description>Advanced piece of technology made not only to augment the human brain, but also to give enhanced neurotransmitter function.</description>
+		<graphicData>
+			<texPath>Things/Item/BodyPart/MedBionic</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<itemGeneratorTags>
+		  <li>SpecialReward</li>
+		</itemGeneratorTags>
+		<statBases>
+			<MarketValue>10000</MarketValue>
+			<Mass>3</Mass>
+		</statBases>
+		<techHediffsTags>
+		  <li>Advanced</li>
+		</techHediffsTags>
+		
+		<!-- artificial - Advanced bionics -->
+		
+		
+	</ThingDef>
+  
+</Defs>

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="OrganicProductBase">
+		<defName>MealSalad</defName>
+		<label>Processed vegetables</label>
+		<description>A mixture of processed vegetables made from gathered raw organic vegetables.Healthy and very fast to make, but very poor nutritional values and spoils pretty fast.\nGrants a slight temporary boost to immune system.</description>
+		<thingClass>ThingWithComps</thingClass>
+		<thingCategories>
+		  <li>Foods</li>
+		</thingCategories>
+		<graphicData>
+			<texPath>Things/Item/Meal/Salad</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<statBases>
+		  <MarketValue>0.01</MarketValue>
+		  <Mass>0.005</Mass>
+		  <WorkToMake>50</WorkToMake>
+		  <DeteriorationRate>5</DeteriorationRate>
+		</statBases>
+		<ingestible>
+		  <foodType>Meal</foodType>
+		  <preferability>MealSimple</preferability>
+		  <tasteThought>AteSalad</tasteThought>
+		  <nutrition>0.10</nutrition>
+		  <ingestEffect>EatVegetarian</ingestEffect>
+		  <ingestSound>Meal_Eat</ingestSound>
+		  <optimalityOffsetHumanlikes>8</optimalityOffsetHumanlikes>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>2</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+			<li Class="CompProperties_Ingredients" />
+			<li Class="CompProperties_FoodPoisonable" />
+			<li Class="SuperiorCrafting.CompProperties_SC_Comp_ImmuneSystemBoost_Light"/>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="OrganicProductBase">
+		<defName>MealJerky</defName>
+		<label>Smoked meat</label>
+		<description>Smoked meat made from raw meat.Nutritious, tasty and long preservation time.</description>
+		<thingClass>ThingWithComps</thingClass>
+		<thingCategories>
+		  <li>Foods</li>
+		</thingCategories>
+		<graphicData>
+			<texPath>Things/Item/Meal/Jerky</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<statBases>
+		  <MarketValue>0.5</MarketValue>
+		  <Mass>0.010</Mass>
+		  <WorkToMake>500</WorkToMake>
+		  <DeteriorationRate>2</DeteriorationRate>
+		</statBases>
+		<ingestible>
+			<foodType>Meal</foodType>
+			<preferability>MealSimple</preferability>
+			<tasteThought>AteJerky</tasteThought>
+			<nutrition>0.50</nutrition>
+			<ingestEffect>EatVegetarian</ingestEffect>
+			<ingestSound>Meal_Eat</ingestSound>
+			<optimalityOffsetHumanlikes>7</optimalityOffsetHumanlikes>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>60</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+			<li Class="CompProperties_Ingredients" />
+			<li Class="CompProperties_FoodPoisonable" />
+		</comps>
+	</ThingDef>
+	
+	<!--============================== GEF ==============================-->
+	<ThingDef ParentName="MealBase">
+		<defName>RawGEF</defName>
+		<label>G.E.F. 728-394 fruit</label>
+		<description>Raw GEF728-394. A genetically engineered fruit designed to provide the whole nutritional value spectrum while maximizing resistence, growth rate and taste.However contain some extra substances that may cause addiction.</description>
+		<soundInteract>Grain_Drop</soundInteract>
+		<soundDrop>Grain_Drop</soundDrop>
+		<graphicData>
+			<texPath>Things/Item/Resource/PlantFoodRaw/DragonFruitRaw</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>60</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>6</DeteriorationRate>
+			<MarketValue>12</MarketValue>
+			<Mass>0.25</Mass>
+		</statBases>
+		<stackLimit>75</stackLimit>
+		<techLevel>Ultra</techLevel>
+		<ingestible>
+			<foodType>VegetableOrFruit</foodType>
+			<nurseable>true</nurseable>
+			<preferability>MealSimple</preferability>
+			<tasteThought>AteRawGEF</tasteThought>
+			<nutrition>1.00</nutrition>
+			<ingestEffect>EatVegetarian</ingestEffect>
+			<ingestSound>RawVegetable_Eat</ingestSound>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>AmbrosiaHigh</hediffDef>
+					<severity>0.50</severity>
+					<toleranceChemical>Ambrosia</toleranceChemical>
+				</li>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>AmbrosiaTolerance</hediffDef>
+					<severity>0.032</severity>
+					<divideByBodySize>true</divideByBodySize>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>40</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+			<li Class="CompProperties_Drug">
+				<chemical>Ambrosia</chemical>
+				<addictiveness>0.010</addictiveness>
+				<minToleranceToAddict>0.15</minToleranceToAddict>
+				<existingAddictionSeverityOffset>0.1</existingAddictionSeverityOffset>
+				<needLevelOffset>1</needLevelOffset>
+				<listOrder>30</listOrder>
+			</li>
+		</comps>
+	</ThingDef>
+</Defs>

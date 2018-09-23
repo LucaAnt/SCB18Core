@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ResearchTabDef>
+		<defName>Agriculture</defName>
+		<label>Agriculture</label>
+	</ResearchTabDef>
+	<ResearchTabDef>
+		<defName>Power</defName>
+		<label>Power</label>
+	</ResearchTabDef>
+	<ResearchTabDef>
+		<defName>Security</defName>
+		<label>Security</label>
+	</ResearchTabDef>
+	<ResearchTabDef>
+		<defName>Construction</defName>
+		<label>Construction</label>
+	</ResearchTabDef>
+	<ResearchTabDef>
+		<defName>Crafting</defName>
+		<label>Crafting</label>
+	</ResearchTabDef>
+	<ResearchTabDef>
+		<defName>Medicine</defName>
+		<label>Medicine</label>
+	</ResearchTabDef>
+	<ResearchTabDef>
+		<defName>Research</defName>
+		<label>Research</label>
+	</ResearchTabDef>
+</Defs>

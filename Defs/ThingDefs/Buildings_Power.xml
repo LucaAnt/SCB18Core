@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--============================== Power I ==============================-->
+
+  
+  <!--============================== Power II ==============================-->
+  
+  <!--============================== Power III ==============================-->
+  
+  <!--============================== Power IV ==============================-->
+
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>NuclearGenerator</defName>
+    <label>nuclear generator</label>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/SCPower/NuclearGenerator6x6</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <damageData>
+        <rect>(0.3,0,5.4,6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>70</pathCost>
+    <passability>PassThroughOnly</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <fillPercent>1</fillPercent>
+    <blockLight>false</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>2000</MaxHitPoints>
+      <WorkToMake>22500</WorkToMake>
+      <Flammability>1.0</Flammability>
+      <Beauty>-40</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <description>Produces a large amount of energy in form of heat, from the unstable atoms nucleus fission in the uranium. Requires a large amount of raw resources and electronics to build, but is not restricted in it's placement. \nEnergy Output 10000W</description>
+    <size>(6,6)</size>
+    <costList>
+      <SteelBar>1000</SteelBar>
+      <PlasteelBar>200</PlasteelBar>
+      <Electronics>50</Electronics>
+      <Glass>200</Glass>
+      <Component>50</Component>
+      <AdvancedComponent>5</AdvancedComponent>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlantSteam</compClass>
+        <basePowerConsumption>-10000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>0.04</fuelConsumptionRate>
+        <fuelCapacity>100.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>UraniumBar</li>
+          </thingDefs>
+        </fuelFilter>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>1</initialConfigurableTargetFuelLevel>
+        <autoRefuelPercent>1</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <drawFuelGaugeInMap>true</drawFuelGaugeInMap>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>20</glowRadius>
+        <glowColor>(0,0,217,0)</glowColor>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <heatPerSecond>20</heatPerSecond>
+        <heatPushMaxTemperature>250000</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <rotatable>true</rotatable>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <constructEffect>ConstructMetal</constructEffect>
+    <constructionSkillPrerequisite>15</constructionSkillPrerequisite>
+    <researchPrerequisites>
+      <li>PowerIV</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  <!--============================== Power V ==============================-->
+<!--  
+  <ThingDef ParentName="BuildingBase">
+    <defName>FusionGenerator</defName>
+    <label>A nuclear Fusion generator</label>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/SCPower/Fusion</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <damageData>
+        <rect>(0.3,0,5.4,6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>70</pathCost>
+    <passability>PassThroughOnly</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <fillPercent>1</fillPercent>
+    <blockLight>false</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>2000</MaxHitPoints>
+      <WorkToMake>22500</WorkToMake>
+      <Flammability>1.0</Flammability>
+      <Beauty>-40</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <description>Produces electricity from a nuclear reaction. Requires a large amount of uranium and electronics to build, but is not restricted in it's placement.
+      Energy Output 10000W</description>
+    <size>(6,6)</size>
+    <costList>
+      <SteelBar>1000</SteelBar>
+      <PlasteelBar>200</PlasteelBar>
+      <Electronics>50</Electronics>
+      <Glass>200</Glass>
+      <Component>50</Component>
+      <AdvancedComponent>5</AdvancedComponent>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlantSteam</compClass>
+        <basePowerConsumption>-10000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>2.0</fuelConsumptionRate>
+        <fuelCapacity>500.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </fuelFilter>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>20</glowRadius>
+        <glowColor>(0,0,217,0)</glowColor>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <heatPerSecond>20</heatPerSecond>
+        <heatPushMaxTemperature>250000</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <rotatable>true</rotatable>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <constructEffect>ConstructMetal</constructEffect>
+    <constructionSkillPrerequisite>15</constructionSkillPrerequisite>
+    <researchPrerequisites>
+      <li>PowerIV</li>
+    </researchPrerequisites>
+  </ThingDef>
+  -->
+</Defs>

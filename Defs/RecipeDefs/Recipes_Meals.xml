@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!--SALADS-->
+	<RecipeDef Name="CookSaladBase" Abstract="True">
+		<fixedIngredientFilter>
+			<categories>
+				<li>PlantFoodRaw</li>
+			</categories>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>
+			<categories>
+				<li>PlantFoodRaw</li>
+			</categories>
+		</defaultIngredientFilter>
+		<workSkill>Cooking</workSkill>
+	</RecipeDef>
+
+	<RecipeDef ParentName="CookSaladBase">
+		<defName>CookMealSalad</defName>
+		<label>Process vegetables</label>
+		<description>Prepares a simple salad made from raw vegetables.</description>
+		<jobString>Cooking simple salad.</jobString>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<requiredGiverWorkType>Cooking</requiredGiverWorkType>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_CookMeal</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>PlantFoodRaw</li>
+					</categories>
+				</filter>
+				<count>0.25</count>
+			</li>
+		</ingredients>
+		<products>
+			<MealSalad>1</MealSalad>
+		</products>
+		<workSkill>Cooking</workSkill>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="CookSaladBase">
+		<defName>CookMealSalad_Bulk</defName>
+		<label>Bulk process vegetables</label>
+		<description>Prepares a simple salad made from raw vegetables. Makes enough for 10 portions.</description>
+		<jobString>Cooking simple salad.</jobString>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<workAmount>500</workAmount>
+		<requiredGiverWorkType>Cooking</requiredGiverWorkType>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_CookMeal</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>PlantFoodRaw</li>
+					</categories>
+				</filter>
+				<count>2.5</count>
+			</li>
+		</ingredients>
+		<products>
+			<MealSalad>10</MealSalad>
+		</products>
+		<workSkill>Cooking</workSkill>
+	</RecipeDef>
+	
+<!--	Jerky -->
+	<RecipeDef Name="CookJerkyBase" Abstract="True">
+		<fixedIngredientFilter>
+			<categories>
+				<li>MeatRaw</li>
+			</categories>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>
+			<categories>
+				<li>MeatRaw</li>
+			</categories>
+			<exceptedThingDefs>
+				<li>Human_Meat</li>
+				<li>Megaspider_Meat</li>
+			</exceptedThingDefs>
+		</defaultIngredientFilter>
+		<workSkill>Cooking</workSkill>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="CookJerkyBase">
+		<defName>CookMealJerky</defName>
+		<label>cook jerky</label>
+		<description>Prepares smoked jerky from raw meat.</description>
+		<jobString>Cooking jerky.</jobString>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<requiredGiverWorkType>Cooking</requiredGiverWorkType>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_CookMeal</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>MeatRaw</li>
+					</categories>
+				</filter>
+				<count>0.5</count>
+			</li>
+		</ingredients>
+		<products>
+			<MealJerky>1</MealJerky>
+		</products>
+		<workSkill>Cooking</workSkill>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="CookJerkyBase">
+		<defName>CookMealJerky_Bulk</defName>
+		<label>Bulk cook jerky</label>
+		<description>Prepares smoked jerky from raw meat.  Makes enough for 10 portions.</description>
+		<jobString>Cooking jerky.</jobString>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<workAmount>5000</workAmount>
+		<requiredGiverWorkType>Cooking</requiredGiverWorkType>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_CookMeal</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>MeatRaw</li>
+					</categories>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<products>
+			<MealJerky>10</MealJerky>
+		</products>
+		<workSkill>Cooking</workSkill>
+	</RecipeDef>
+  
+<!--                                       4 Meals                              -->
+
+	<RecipeDef Name="CookMealSimple" ParentName="CookMealBase">
+    <defName>CookMealSimple_Bulk</defName>
+    <label>Bulk simple meals</label>
+    <description>Cooks a straightforward meal from one ingredient.  Makes enough for 10 meals.</description>
+    <jobString>Cooking simple meal.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+	<workAmount>2500</workAmount>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>FoodRaw</li>
+          </categories>
+        </filter>
+        <count>5.0</count>
+      </li>
+    </ingredients>
+		<products>
+			<MealSimple>10</MealSimple>
+		</products>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+
+  <RecipeDef ParentName="CookMealBase">
+		<defName>CookMealFine_Bulk</defName>
+  		<label>Bulk fine meals</label>
+		<description>Cooks a somewhat complex meal from a combination of raw meat and raw plant ingredients.Makes enough for 10 meals.</description>
+		<jobString>Cooking fine meal.</jobString>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<workAmount>2500</workAmount>
+		<effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>MeatRaw</li>
+            <li>AnimalProductRaw</li>
+          </categories>
+				</filter>
+				<count>2.50</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>PlantFoodRaw</li>
+					</categories>
+				</filter>
+				<count>2.50</count>
+			</li>
+		</ingredients>
+		<products>
+      <MealFine>10</MealFine>
+    </products>
+		<skillRequirements>
+			<Cooking>6</Cooking>
+		</skillRequirements>
+  </RecipeDef>
+
+	<RecipeDef ParentName="CookMealBase">
+		<defName>CookMealLavish_Bulk</defName>
+		<label>Bulk lavish meals</label>
+		<description>Cooks a very complex meal from a combination of raw meat and raw plant ingredients. Much of the ingredients are wasted.Makes enough for 10 meals.</description>
+		<jobString>Cooking lavish meal.</jobString>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<workAmount>2500</workAmount>
+		<effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+		<ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>MeatRaw</li>
+            <li>AnimalProductRaw</li>
+          </categories>
+				</filter>
+				<count>5.0</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>PlantFoodRaw</li>
+					</categories>
+				</filter>
+				<count>5.0</count>
+			</li>
+		</ingredients>
+		<products>
+      <MealLavish>10</MealLavish>
+    </products>
+		<skillRequirements>
+			<Cooking>8</Cooking>
+		</skillRequirements>
+  </RecipeDef>
+
+  <RecipeDef ParentName="CookMealBase">
+    <defName>CookMealSurvival_Bulk</defName>
+  	<label>Bulk packaged survival meals</label>
+    <description>Cooks a packaged survival meal from a combination of raw meat and raw plant ingredients. Much of the ingredients are wasted.Makes enough for 10 meals.</description>
+    <jobString>Cooking survival meal.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+	<workAmount>2500</workAmount>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </filter>
+        <count>5.0</count>
+      </li>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+          </categories>
+        </filter>
+        <count>5.0</count>
+      </li>
+    </ingredients>
+    <products>
+      <MealSurvivalPack>10</MealSurvivalPack>
+    </products>
+    <skillRequirements>
+			<Cooking>8</Cooking>
+    </skillRequirements>
+    <researchPrerequisite>PackagedSurvivalMeal</researchPrerequisite>
+  </RecipeDef>
+
+
+</Defs>

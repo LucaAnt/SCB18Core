@@ -1,0 +1,995 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--
+	<techLevel>Ultra</techLevel>
+	<techLevel>Spacer</techLevel>
+	<techLevel>Industrial</techLevel>
+	<techLevel>Medieval</techLevel>
+	<techLevel>Neolithic</techLevel>
+	-->
+
+	<!--
+	<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+	-->
+	<!--
+	<requiredResearchFacilities>
+		<li>MultiAnalyzer</li>
+	</requiredResearchFacilities>
+	-->
+
+
+	<!--============================== Main Categories ==============================-->
+	<!--============================== Basic survival ==============================-->
+	<ResearchProjectDef>
+		<defName>Survival</defName>
+		<label>Basic survival</label>
+		<description>Figure out how to survive in this harsh enviroment.Unlock the food praparation table for basic raw food processing and fire ignition techniques for torches and campfires. Good Luck! Survivors!</description>
+		<baseCost>100</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<tags>
+			<li>TribalStart</li>
+		</tags>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>RecurveBow</defName>
+		<label>recurve bow</label>
+		<description>Minor Discovery:Advanced construction techniques allow for production of the recurve bow, an effective and inexpensive ranged weapon.</description>
+		<baseCost>200</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<prerequisites>
+			<li>Survival</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>Greatbows</defName>
+		<label>greatbows</label>
+		<description>Minor Discovery:Learn to produce powerful greatbows.</description>
+		<baseCost>800</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<prerequisites>
+			<li>RecurveBow</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>Pemmican</defName>
+		<label>pemmican</label>
+		<description>Minor Discovery:Make pemmican, a preserved mixture of meat and plant matterthat doesn't go bad for a long time. Great for traveling.</description>
+		<baseCost>200</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<prerequisites>
+			<li>Survival</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>PassiveCooler</defName>
+		<label>passive cooler</label>
+		<description>Minor Discovery:Make passive coolers, a way to cool indoor spaces without using
+			electricity.</description>
+		<baseCost>200</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<prerequisites>
+			<li>Survival</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>Bedrolls</defName>
+		<label>bedrolls</label>
+		<description>Minor Discovery:Allows you to make bedrolls.</description>
+		<baseCost>200</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<prerequisites>
+			<li>Survival</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>PsychoidBrewing</defName>
+		<label>psychoid brewing</label>
+		<description>Minor Discovery:With preparation, psychoid leaves can be boiled in water, producing a mildly euphoric and addictive tea.</description>
+		<baseCost>200</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<prerequisites>
+			<li>Survival</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!--============================== Research I ==============================-->
+	<ResearchProjectDef>
+		<defName>ResearchI</defName>
+		<label>Research I</label>
+		<description>Now that your colony have all the basic tools for a decent survival it's time to think for the future!Lay the theoretical knowledge foundations required to further advances in tech. Unlock the basic research bench.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tab>Research</tab>
+		<prerequisites>
+			<li>Pemmican</li>
+			<li>PassiveCooler</li>
+			<li>Bedrolls</li>
+		</prerequisites>
+		<tags>
+			<li>ClassicStart</li>
+		</tags>
+	</ResearchProjectDef>
+	<!--============================== Research II ==============================-->
+	<ResearchProjectDef>
+		<defName>ResearchII</defName>
+		<label>Research II</label>
+		<description>Unlock the advanced research bench which speed up research tasks even more.</description>
+		<baseCost>5000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Research</tab>
+		<prerequisites>
+			<li>ResearchI</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!--============================== Research III ==============================-->
+	<ResearchProjectDef>
+		<defName>MultiAnalyzer</defName>
+		<label>Research III</label>
+		<description>Allows colonists to build multi-analyzers.</description>
+		<baseCost>10000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Research</tab>
+		<prerequisites>
+			<li>ResearchII</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!--============================== Research IV ==============================-->
+	
+	<!--============================== Agriculture I ==============================-->
+	<ResearchProjectDef>
+		<defName>AgricultureI</defName>
+		<label>Agriculture I</label>
+		<description>Learn the basics of agriculture on this new world. Allows the growing of basic crops, which are native to this planet. Unlocks the ability to cultivate corn, rice, and strawberries. Also unlocks fences, to keep those pesky critters away from your crops!</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tab>Agriculture</tab>
+		<prerequisites>
+			<li>ResearchI</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!--============================== Agriculture II ==============================-->
+	<ResearchProjectDef>
+		<defName>Devilstrand</defName>
+		<label>Agriculture II</label>
+		<description>Further advancements in agriculture, give your colonists the ability to fertilize the soil. Unlocks the composter, which allows you to create mulch from wood logs. Also unlocks cotton and devilstrand to sow.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Agriculture</tab>
+		<prerequisites>
+			<li>AgricultureI</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>Brewing</defName>
+		<label>brewing</label>
+		<description>Minor Discovery: This allows your colonists to build a brewery, so they can transform hops into tasty, tasty beer.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Agriculture</tab>
+		<prerequisites>
+			<li>AgricultureI</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!--============================== Agriculture III ==============================-->
+	<ResearchProjectDef>
+		<defName>Hydroponics</defName>
+		<label>Agriculture III</label>
+		<description>Increased familiarity with the planets environment unlocks the secret of hydroponic gardening. This allows your colonists to build the hydroponic table, to allow for indoor gardening.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Agriculture</tab>
+		<prerequisites>
+			<li>Devilstrand</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!--============================== Agriculture IV ==============================-->
+	<ResearchProjectDef>
+		<defName>MoisturePump</defName>
+		<label>Agriculture IV</label>
+		<description>Advanced knowledge of this planets environment gives your colonists the ability to terraform. This unlocks the terraforming pump, which allows you to create farmable soil anywhere. Also allows a new advanced glitterworld fertilization method which speed up plant growth at an impressive rate.</description>
+		<baseCost>4000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<tab>Agriculture</tab>
+		<prerequisites>
+			<li>Hydroponics</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<!--============================== Agriculture IV ==============================-->
+	<ResearchProjectDef>
+		<defName>AgricultureV</defName>
+		<label>Agriculture V</label>
+		<description>Why stop researching at enviromental manipulation techniques to speed up plant growth when we can hack directly into plants genome to serve our own needs ? This unlocks new genetically modified crops optimized for our feeding purposes and more...</description>
+		<baseCost>8000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<tab>Agriculture</tab>
+		<prerequisites>
+			<li>MoisturePump</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<!--============================== Power I ==============================-->
+	<ResearchProjectDef>
+		<defName>Electricity</defName>
+		<label>Power I</label>
+		<description>Learn the basics of power generation to help your colonists survive in this harsh environment. This advancement unlocks conduits and the steam generator. </description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tab>Power</tab>
+		<prerequisites>
+			<li>ResearchI</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<!--============================== Power II ==============================-->
+	<ResearchProjectDef>
+		<defName>SolarPanels</defName>
+		<label>Power II</label>
+		<description>Further advancements in power technology, give your colonists the ability to harness the powers of the elements. Unlocks the solar powered generator, the wind turbine and the chemfuel generator. Also increases battery energy storage by 15 percent and improve recharging efficency to 75%.</description>
+		<researchMods>
+			<li Class="SuperiorCrafting.SC_ReasearchUpgrades">
+				<ResearchIndex>PowerII</ResearchIndex>
+			</li>
+		</researchMods>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Power</tab>
+		<prerequisites>
+			<li>Electricity</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<!--============================== Power III ==============================-->
+	<ResearchProjectDef>
+		<defName>GeothermalPower</defName>
+		<label>Power III</label>
+		<description>What do you do when the sun doesn't shine? Solar power is great, except when it's dark! This advancement in power generation unlocks the geothermal generator that can harness the power of the planet! Also increases battery energy storage by 15 percent and improve recharging efficency to 100%.</description>
+		<researchMods>
+			<li Class="SuperiorCrafting.SC_ReasearchUpgrades">
+				<ResearchIndex>PowerIII</ResearchIndex>
+			</li>
+		</researchMods>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Power</tab>
+		<prerequisites>
+			<li>SolarPanels</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!--============================== Power IV ==============================-->
+	<ResearchProjectDef>
+		<defName>PowerIV</defName>
+		<label>Power IV</label>
+		<description>Geothermal power is great, except when you can't find a steam vent! Advanced knowledge of power generation allows you to build a nuclear reactor. Also increases battery energy storage by 15 percent and improve recharging efficency to 125%.</description>
+		<researchMods>
+			<li Class="SuperiorCrafting.SC_ReasearchUpgrades">
+				<ResearchIndex>PowerIV</ResearchIndex>
+			</li>
+		</researchMods>
+		<baseCost>4000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<tab>Power</tab>
+		<prerequisites>
+			<li>GeothermalPower</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<!--============================== SECURITY I ==============================-->
+	<ResearchProjectDef>
+		<defName>SecurityI</defName>
+		<label>Security I</label>
+		<description>Not only does it appear that the planets environment is trying to kill you, but hostile creatures and raiders are as well! Learning the basics of security will allow your colonists to manipulate the surrounding colony terrain in order to have a tactical advantage aganist hostiles.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tab>Security</tab>
+		<prerequisites>
+			<li>ResearchI</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>Embrasures</defName>
+		<label>stone embrasures</label>
+		<description>Minor Discovery: Don't let your colonists fight out in the open! This skill unlocks the ability to create stone embrasures that colonists can use for additional protection.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tab>Security</tab>
+		<prerequisites>
+			<li>SecurityI</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<!--============================== SECURITY II ==============================-->
+	<ResearchProjectDef>
+		<defName>Mortars</defName>
+		<label>Security II</label>
+		<description>Sometimes, the best defence is a strong offense. Further advancements in security research unlock the ability to build mortars, so you can attack those pesky enemies from afar, as well as allowing your colonists to create manned turrets to help fend off these nasty attacks.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Security</tab>
+		<prerequisites>
+			<li>SecurityI</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>SpecializedMannedTurrets</defName>
+		<label>specialized manned turrets</label>
+		<description>Minor Discovery: This allows colonists to build the gatling, shotgun, and sniper manned turrets.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Security</tab>
+		<prerequisites>
+			<li>Mortars</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>IEDs</defName>
+		<label>IEDs</label>
+		<description>Minor Discovery:Allows colonists to build improvised traps from explosive, EMP, firefoam, and antigrain warhead mortar shells.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Security</tab>
+		<prerequisites>
+			<li>Mortars</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>IEDIncendiary</defName>
+		<label>incendiary IEDs</label>
+		<description>Minor Discovery:Allows colonists to build incendiary explosive traps from mortar shells.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Security</tab>
+		<prerequisites>
+			<li>Mortars</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<!--============================== SECURITY III ==============================-->
+	<ResearchProjectDef>
+		<defName>GunTurrets</defName>
+		<label>Security III</label>
+		<description>The best way to keep your colonists safe during an attack is to let someone else do the fighting! This advancement unlocks the ability to build auto turrets that will fight for you, and do not have to be manned.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Security</tab>
+		<prerequisites>
+			<li>Mortars</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AITurret</defName>
+		<label>Basic AI turret</label>
+		<description>Minor Discovery: This allows colonists to build the standard issue military automated turret</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Security</tab>
+		<prerequisites>
+			<li>GunTurrets</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>SpecializedAITurrets</defName>
+		<label>specialized AI turrets</label>
+		<description>Minor Discovery: This allows colonists to build the gatling, shotgun, and sniper sentry turrets.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Security</tab>
+		<prerequisites>
+			<li>AITurret</li>
+			<li>SpecializedMannedTurrets</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<!--============================== SECURITY IV ==============================-->
+	<ResearchProjectDef>
+		<defName>SecurityIV</defName>
+		<label>Security IV</label>
+		<description>Don't let your colonists fight out in the open! Continued advancement in security unlocks the ability to create the Sabre force shield and CRAM fortress shield to protect your colonists.</description>
+		<baseCost>4000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<tab>Security</tab>
+		<prerequisites>
+			<li>GunTurrets</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<!--============================== Construction I ==============================-->
+	<ResearchProjectDef>
+		<defName>Stonecutting</defName>
+		<label>Construction I</label>
+		<description>Learn the basics of putting the raw materials of this planet to good use. This technology unlocks the ability to construct robust stone structures and infrastructure using crafted stone blocks. Also increases wall durability.</description>
+		<researchMods>
+			<li Class="SuperiorCrafting.SC_ReasearchUpgrades">
+				<ResearchIndex>CostructionI</ResearchIndex>
+			</li>
+		</researchMods>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tab>Construction</tab>
+		<prerequisites>
+			<li>ResearchI</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>Woodwork</defName>
+		<label>Woodwork</label>
+		<description>Minor Discovery:Advanced carpentery techniques allow you to build amazing wooden floors.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tab>Construction</tab>
+		<prerequisites>
+			<li>Stonecutting</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>CarpetMaking</defName>
+		<label>fabric dye</label>
+		<description>Minor Discovery: This allows colonists to build plush carpets that increase the quality of their environments.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tab>Construction</tab>
+		<prerequisites>
+			<li>Stonecutting</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<!--============================== Construction II ==============================-->
+	<ResearchProjectDef>
+		<defName>Autodoors</defName>
+		<label>Construction II</label>
+		<description>Light up that colony! Further advancements in construction let your colonist to put electricity to good use, for illumination purposes and to build metal structures and infrastructure, unlocks conduit walls, lights and powered doors to speed your colonists along their merry way. Also increases wall durability.</description>
+		<researchMods>
+			<li Class="SuperiorCrafting.SC_ReasearchUpgrades">
+				<ResearchIndex>CostructionII</ResearchIndex>
+			</li>
+		</researchMods>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Construction</tab>
+		<prerequisites>
+			<li>Stonecutting</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>ElectricCremation</defName>
+		<label>Crematorioum</label>
+		<description>Minor Discovery: This allows colonists to build crematoriums, which can vaporize unwanted corpses and apparel.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Construction</tab>
+		<prerequisites>
+			<li>Autodoors</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+
+	<ResearchProjectDef>
+		<defName>LightedWalls</defName>
+		<label>lighted walls</label>
+		<description>Minor Discovery: Dark hallways make for unhappy colonists. This allows colonists to build conduit filled, lighted walls.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Construction</tab>
+		<prerequisites>
+			<li>Autodoors</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>ColoredLights</defName>
+		<label>Ceilings</label>
+		<description>Minor Discovery: Allows colonists to construct ceilings for illumination purposes.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Construction</tab>
+		<prerequisites>
+			<li>Autodoors</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<!--============================== Construction III ==============================-->
+	<ResearchProjectDef>
+		<defName>ConstructionIII</defName>
+		<label>Construction III</label>
+		<description>Nothing says keep out like a plasteel reinforced door blocking your way. Continued advancement in construction unlocks the ability to secure your base with blast doors, enjoy some air Conditioning to chill during these arid rimsummers and also keeping your colony food storage refrigerated ! Also increases wall durability.</description>
+		<researchMods>
+			<li Class="SuperiorCrafting.SC_ReasearchUpgrades">
+				<ResearchIndex>CostructionIII</ResearchIndex>
+			</li>
+		</researchMods>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Construction</tab>
+		<prerequisites>
+			<li>Autodoors</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AirConditioning</defName>
+		<label>Advanced climate control</label>
+		<description>Build industrial heating and cooling solutions.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Construction</tab>
+		<prerequisites>
+			<li>ConstructionIII</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>Firefoam</defName>
+		<label>firefoam</label>
+		<description>Allows the construction of firefoam poppers; fire-safety buildings which spread fire-retardant foam in response to encroaching flames.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Construction</tab>
+		<prerequisites>
+			<li>ConstructionIII</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+
+	<ResearchProjectDef>
+		<defName>DeepDrilling</defName>
+		<label>deep drilling</label>
+		<description>Allows you to build deep drills for extracting resources from deep underground. You'll need a ground-penetrating scanner to find the resources.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Construction</tab>
+		<prerequisites>
+			<li>ConstructionIII</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>GroundPenetratingScanner</defName>
+		<label>ground-penetrating scanner</label>
+		<description>Allows you to build ground-penetrating scanners that can detect drillable resources deep under the surface.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Construction</tab>
+		<prerequisites>
+			<li>DeepDrilling</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>LongRangeMineralScanner</defName>
+		<label>long-range mineral scanner</label>
+		<description>Allows the construction of long-range mineral scanners which automatically detect precious minerals like gold or jade in the nearby areas (but not in which the scanners were built).The lumps are found on average once per 30 days within a radius of 30 tiles.Building more than one scanner in the same or nearby areas has little to no effect.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Construction</tab>
+		<prerequisites>
+			<li>GroundPenetratingScanner</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!--============================== Construction IV ==============================-->
+	<ResearchProjectDef>
+		<defName>ConstructionIV</defName>
+		<label>Construction IV</label>
+		<description>They say home is where the heart is, and your heart is happiest among the stars! This unlocks the ability to construct a ship structural beam, so you can start down the path of leaving this filthy rock. Also increases wall durability.</description>
+		<researchMods>
+			<li Class="SuperiorCrafting.SC_ReasearchUpgrades">
+				<ResearchIndex>CostructionIV</ResearchIndex>
+			</li>
+		</researchMods>
+		<baseCost>4000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<tab>Construction</tab>
+		<prerequisites>
+			<li>ConstructionIII</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!--============================== Crafting I ==============================-->
+	<ResearchProjectDef>
+		<defName>Smithing</defName>
+		<label>Crafting I</label>
+		<description>Learn the basics of crafting useful materials from this harsh environment.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>ResearchI</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>Beds</defName>
+		<label>Furniture I</label>
+		<description>Allows you to build basic medieval tier furniture pieces</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>Smithing</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>Art</defName>
+		<label>Art</label>
+		<description>What is life without art ? Allow your colonist build the sculptor table to decorate your colony with beautiful masterpieces</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>Smithing</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!--============================== Crafting II ==============================-->
+	<ResearchProjectDef>
+		<defName>ElectricSmelting</defName>
+		<label>Crafting II</label>
+		<description>Further advancements in crafting, unlock the ability to build powered crafting tables. They are faster, and more effective than their non-powered counterparts. Also unlocks additional furniture items and training devices your colonists may use.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>Smithing</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>ComplexClothing</defName>
+		<label>complex clothing</label>
+		<description>Sew complicated garments like pants, dusters, and cowboy hats.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>ElectricSmelting</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>Refining</defName>
+		<label>refining</label>
+		<description>Build refineries to make chemfuel from organic and plasteel from steel and devilstrand.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>ElectricSmelting</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>FurnitureII</defName>
+		<label>Furniture II</label>
+		<description>Allows you to build industrial tier furniture pieces</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>Beds</li>
+			<li>ElectricSmelting</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!--============================== Crafting III ==============================-->
+	<ResearchProjectDef>
+		<defName>Machining</defName>
+		<label>Crafting III</label>
+		<description>Continued advancement in crafting, unlocks the ability to build the smithing table. With this you can create weapons, electronic chips, and weaponized prosthetics. Also unlocks additional furniture items to beautify your colony.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>ElectricSmelting</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>MicroelectronicsBasics</defName>
+		<label>microelectronics basics</label>
+		<description>The basics of working with delicate, complex electronics. This unlocks further research projects requiring electronics to work properly such as tube televisions and orbital communications equipment.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>Machining</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>Communications</defName>
+		<label>communications</label>
+		<description>Minor Discovery: This allows colonists to construct a communications station and trade beacon, so they may interact with other colonies and trade ships.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>MicroelectronicsBasics</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>MultibarrelWeapons</defName>
+		<label>multibarrel weapons</label>
+		<description>Allows you to build miniguns.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>PrecisionRifling</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>ComponentAssembly</defName>
+		<label>component assembly</label>
+		<description>Minor Discovery:Allows you to build the Component Assembly Bench, where colonists can make components from simple materials.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>MicroelectronicsBasics</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>NutrientPaste</defName>
+		<label>food synthesizer</label>
+		<description>Minor Discovery: This allows colonists to build the food synthesizer. While not the most tasty of ways to get a meal, the paste is nutritious, and it does free up colonists to do other things.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>Machining</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>NutrientResynthesis</defName>
+		<label>nutrient resynthesis</label>
+		<description>Minor Discovery: This increases the efficiency of the food synthesizer. It now consumes 50% less organic feedstock per meal produced.</description>
+		<researchMods>
+			<li Class="SuperiorCrafting.SC_ReasearchUpgrades">
+				<ResearchIndex>NutrientResynthesisII</ResearchIndex>
+			</li>
+		</researchMods>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>NutrientPaste</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>ProteinReplication</defName>
+		<label>protein replication</label>
+		<description>Minor Discovery: Increase even more the efficency of the food synthesizer, food shortage is not a problem anymore, the taste is!</description>
+		<researchMods>
+			<li Class="SuperiorCrafting.SC_ReasearchUpgrades">
+				<ResearchIndex>ProteinReplication</ResearchIndex>
+			</li>
+		</researchMods>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>NutrientResynthesis</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+
+	<!--============================== CraftingIV ==============================-->
+	<ResearchProjectDef>
+		<defName>CraftingIV</defName>
+		<label>Crafting IV</label>
+		<description>Unlocks the spacer technolgy required to build advanced weapons and armors.The bleeding edge military equipment awaits !</description>
+		<baseCost>4000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>Machining</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>FurnitureIII</defName>
+		<label>Furniture III</label>
+		<description>Allows you to build glietterworld tier furniture pieces</description>
+		<baseCost>4000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>FurnitureII</li>
+			<li>CraftingIV</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>ShieldBelt</defName>
+		<label>shield belt</label>
+		<description>Momentum-repulsion field technology allows you to build shield belts, which block ranged attacks coming in or going out.</description>
+		<baseCost>4000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>CraftingIV</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>PoweredArmor</defName>
+		<label>powered armor</label>
+		<description>Neuro-memetic robotics and advanced plasteel weaving technologies allow you to build the power armor and power armor helmets.</description>
+		<baseCost>4000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>CraftingIV</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>ChargedShot</defName>
+		<label>charged shot</label>
+		<description>Understand the secrets of pulse-charged energy/projectile munitions. Allows you to build the charge rifle and progress your colony research to advanced glitterworld weaponry. </description>
+		<baseCost>4000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>CraftingIV</li>
+			<li>MultibarrelWeapons</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AdvancedRocketry</defName>
+		<label>advanced rocketry</label>
+		<description>Minor Discovery: New propellent blending techniques and aerodynamic hull designs, allows triple rocket launcher and the doomsday rocket launcher to be crafted at the smithing table.Have fun with raids!</description>
+		<baseCost>4000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>CraftingIV</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>TransportPod</defName>
+		<label>transport pod</label>
+		<description>Minor Discovery: Construct launchable transport pods that you can use to launch people and supplies long distances across the planet's surface.</description>
+		<baseCost>4000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<tab>Crafting</tab>
+		<prerequisites>
+			<li>AdvancedRocketry</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	<!--============================== Medicine I ==============================-->
+	<ResearchProjectDef>
+		<defName>HospitalBed</defName>
+		<label>Medicine I</label>
+		<description>Allows colonists to construct basic medical utilities increasing chance of successful medical work and recovering time.Also allows colonists to grow medicinal herbs to treat wounds.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tab>Medicine</tab>
+		<prerequisites>
+			<li>ResearchI</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>VitalsMonitor</defName>
+		<label>vitals monitor</label>
+		<description>Minor Discovery: Allows colonists to build vitals monitors which improve medical care when placed next to hospital beds.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Medicine</tab>
+		<prerequisites>
+			<li>HospitalBed</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<!--============================== Medicine II ==============================-->
+	<ResearchProjectDef>
+		<defName>DrugProduction</defName>
+		<label>Medicine II</label>
+		<description>This allows your colonists to build the Chemlab, which can be used to create medkits, and advanced prosthetic body parts. This also allows the basics of drug preparation and synthesis. Further research is required to make specific drugs.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Medicine</tab>
+		<prerequisites>
+			<li>HospitalBed</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>MedicineProduction</defName>
+		<label>medicine production</label>
+		<description>Produce medicine from herbal medicine, neutroamine, and cloth.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<tab>Medicine</tab>
+		<prerequisites>
+			<li>DrugProduction</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<!--============================== Medicine III ==============================-->
+	<ResearchProjectDef>
+		<defName>Cryptosleep</defName>
+		<label>Medicine III</label>
+		<description>This unlocks the organ vat which can be used to turn human corpses into biomatter, and grow replacement organs.Unlocks also cryptosleep caskets.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<tab>Medicine</tab>
+		<prerequisites>
+			<li>DrugProduction</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<!--============================== Medicine IV ==============================-->
+	<ResearchProjectDef>
+		<defName>MedicineIV</defName>
+		<label>Medicine IV</label>
+		<description>Your injured colonists no longer have to accept the mediocrity of inferior prosthetics. This advancement in medicine unlocks the ability to create your own bionic body parts. You can now be smarter, stronger, and faster, without having to sell your soul to the trade ships to get them! Also unlocks the advanced medical bed, treating your injured colonists will not be a problem anymore!</description>
+		<baseCost>4000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<tab>Medicine</tab>
+		<prerequisites>
+			<li>Cryptosleep</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>MedicineGlitterProduction</defName>
+		<label>Glitterworld Medicine production</label>
+		<description>After years of struggling finally we can syntetize our own version of Glitterworlds Medicine</description>
+		<baseCost>4000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<tab>Medicine</tab>
+		<prerequisites>
+			<li>MedicineIV</li>
+			<li>MedicineProduction</li>
+		</prerequisites>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+	</ResearchProjectDef>
+	
+	<!--============================== Medicine V ==============================-->
+<!--	<ResearchProjectDef>
+		<defName>MedicineV</defName>
+		<label>Medicine V</label>
+		<description>We are now at a point in history where the secrets of life and death are no longer a mistery.With this final advancement we will be able to bring back from the dead our fellow colonists or to clone them if the corpse is lost. This research unlocks the cloning vat and the medical procedure to resuscitate our people or whatever.</description>
+		<baseCost>8000</baseCost>
+		<techLevel>Ultra</techLevel>
+		<tab>Medicine</tab>
+		<prerequisites>
+			<li>MedicineIV</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>AdvBionics</defName>
+		<label>Advanced bionics</label>
+		<description>I will also walk among you and be your God, and you shall be My people.</description>
+		<baseCost>8000</baseCost>
+		<techLevel>Ultra</techLevel>
+		<tab>Medicine</tab>
+		<prerequisites>
+			<li>MedicineV</li>
+		</prerequisites>
+	</ResearchProjectDef>-->
+	
+</Defs>

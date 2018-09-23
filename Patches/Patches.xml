@@ -1,0 +1,1118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+    <!--============================== Designators ==============================--> 
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/DesignationCategoryDef[defName="Orders"]/specialDesignatorClasses</xpath>
+        <value>
+            <li>SuperiorCrafting.Designators.Designator_SandHarvesting</li> 
+        </value>
+    </Operation> 
+    <!--============================== Basic Resources ==============================-->     
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName="HerbalMedicine"]</xpath>
+        <value>
+        <ingestible>
+            <foodType>Meal</foodType>
+            <preferability>NeverForNutrition</preferability>
+            <tasteThought>AteHerbalMedicine</tasteThought>
+            <nutrition>0.00</nutrition>
+            <ingestEffect>EatVegetarian</ingestEffect>
+            <ingestSound>Meal_Eat</ingestSound>
+            <optimalityOffsetHumanlikes>-10</optimalityOffsetHumanlikes>
+        </ingestible>
+        </value>
+    </Operation> 
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName="HerbalMedicine"]/comps</xpath>
+        <value>
+            <li Class="SuperiorCrafting.CompProperties_SC_Comp_ImmuneSystemBoost_Medium"/>
+        </value>
+    </Operation> 
+    
+    <!--============================== BODY PARTS ==============================--> 
+    <!--============================== Natural ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[@ParentName="BodyPartNaturalBase"]/graphicData</xpath>
+        <value>
+            <graphicData>
+                <texPath>Things/Item/BodyPart/MedOrgan</texPath>
+                <graphicClass>Graphic_Single</graphicClass>
+            </graphicData>
+        </value>
+    </Operation>
+    <!--============================== Simple ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "SimpleProstheticLeg"]/graphicData | */ThingDef[defName = "SimpleProstheticArm"]/graphicData</xpath>
+        <value>
+            <graphicData>
+                <texPath>Things/Item/BodyPart/MedProstheticSimple</texPath>
+                <graphicClass>Graphic_Single</graphicClass>
+            </graphicData>
+        </value>
+    </Operation>
+    <!--============================== Bionic ==============================-->
+    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "BionicEye"]/graphicData | */ThingDef[defName = "BionicArm"]/graphicData | */ThingDef[defName = "BionicLeg"]/graphicData</xpath>
+        <value>
+            <graphicData>
+                <texPath>Things/Item/BodyPart/MedBionic</texPath>
+                <graphicClass>Graphic_Single</graphicClass>
+            </graphicData>
+        </value>
+    </Operation>
+    
+    <!--============================== Weapon body parts ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "PowerClaw"]/graphicData | */ThingDef[defName = "ScytherBlade"]/graphicData</xpath>
+        <value>
+            <graphicData>
+                <texPath>Things/Item/BodyPart/MedProstheticWeapon</texPath>
+                <graphicClass>Graphic_Single</graphicClass>
+            </graphicData>
+        </value>
+    </Operation>
+    
+    <!--============================== Hediffs ==============================-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/HediffDef[defName = "SimpleProstheticLeg"] | */HediffDef[defName = "SimpleProstheticArm"] </xpath>
+        <value>
+            <defaultLabelColor>(255,69,0)</defaultLabelColor>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/HediffDef[defName = "PegLeg"] | */HediffDef[defName = "Denture"]</xpath>
+        <value>
+            <defaultLabelColor>(139,0,0)</defaultLabelColor>
+        </value>
+    </Operation>
+    
+    <!--============================== ARCHITET TABS BUILDINGS ==============================-->
+    <!--============================== TEMPERATURE ==============================-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName = "Campfire"]</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>Survival</li>
+            </researchPrerequisites>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName = "Vent"]</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>ConstructionIII</li>
+            </researchPrerequisites>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "Vent"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>30</SteelBar>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "Cooler"]/researchPrerequisites</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>ConstructionIII</li>
+            </researchPrerequisites>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "Cooler"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>90</SteelBar>
+                <Component>5</Component>
+                <Electronics>1</Electronics>
+                <Glass>50</Glass>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "Heater"]/researchPrerequisites</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>ConstructionIII</li>
+            </researchPrerequisites>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "Heater"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>65</SteelBar>
+                <Component>3</Component>
+                <Glass>10</Glass>
+            </costList>
+        </value>
+    </Operation>
+
+    <!--============================== COSTRUCTION ==============================-->
+    <!--============================== doors ==============================-->
+    <Operation Class="PatchOperationRemove">
+        <xpath>*/ThingDef[@Name="DoorBase"]/designationCategory</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>*/ThingDef[defName = "Door"]/designationHotKey</xpath>
+    </Operation>
+    <!--============================== walls ==============================-->
+    <Operation Class="PatchOperationRemove">
+        <xpath>*/ThingDef[defName = "Wall"]/designationCategory</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>*/ThingDef[defName = "Wall"]/designationHotKey</xpath>
+    </Operation>
+ 
+    <!--============================== FLOORS ==============================--> 
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/TerrainDef[@ParentName="TileStoneBase"]  | */TerrainDef[@ParentName="FlagstoneBase"] | */TerrainDef[defName="Concrete"] | */TerrainDef[defName="PavedTile"] </xpath>
+        <value>
+            <researchPrerequisites>
+                <li>Stonecutting</li>
+            </researchPrerequisites>
+        </value>
+    </Operation> 
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/TerrainDef[defName="Concrete"]/costList</xpath>
+        <value>
+            <costList>
+                <Sand>5</Sand>
+            </costList>
+        </value>
+    </Operation> 
+    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/TerrainDef[defName="PavedTile"]/costList </xpath>
+        <value>
+            <costList>
+                <Sand>30</Sand>
+            </costList>
+        </value>
+    </Operation> 
+    
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/TerrainDef[defName="MetalTile"] | */TerrainDef[defName="SilverTile"]  | */TerrainDef[defName="GoldTile"] </xpath>
+        <value>
+            <researchPrerequisites>
+                <li>Autodoors</li>
+            </researchPrerequisites>
+        </value>
+    </Operation> 
+    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/TerrainDef[defName="MetalTile"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>3</SteelBar>
+            </costList>
+        </value>
+    </Operation> 
+    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/TerrainDef[defName="SilverTile"]/costList</xpath>
+        <value>
+            <costList>
+                <SilverBar>3</SilverBar>
+            </costList>
+        </value>
+    </Operation> 
+    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/TerrainDef[defName="GoldTile"]/costList</xpath>
+        <value>
+            <costList>
+                <GoldBar>3</GoldBar>
+            </costList>
+        </value>
+    </Operation> 
+    
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/TerrainDef[defName="SterileTile"]</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>HospitalBed</li>
+            </researchPrerequisites>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/TerrainDef[defName="SterileTile"]/costList</xpath>
+        <value>
+            <costList>
+                <SilverBar>1</SilverBar>
+            </costList>
+        </value>
+    </Operation>
+    
+    <!--============================== POWER ==============================-->
+    <!--============================== PowerConduit ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="PowerConduit"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>1</SteelBar>
+            </costList>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="PowerConduit"]/researchPrerequisites</xpath>
+        <value>
+            <researchPrerequisites><li>Electricity</li></researchPrerequisites>
+        </value>
+    </Operation>
+    
+    <!--============================== PowerSwitch ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="PowerSwitch"]/costList</xpath>
+        <value><costList>
+            <SteelBar>10</SteelBar>
+            <Component>1</Component>
+        </costList>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="PowerSwitch"]/researchPrerequisites</xpath>
+        <value>
+            <researchPrerequisites><li>Electricity</li></researchPrerequisites>
+        </value>
+    </Operation>
+    
+    <!--============================== Battery ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Battery"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>50</SteelBar>
+                <Component>2</Component>
+            </costList>
+        </value>
+    </Operation>
+    
+    <!--============================== WoodFiredGenerator ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="WoodFiredGenerator"]/costList</xpath>
+        <value><costList>
+            <SteelBar>100</SteelBar>
+            <Component>2</Component>
+        </costList>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="WoodFiredGenerator"]/comps/li[@Class="CompProperties_Power"]</xpath>
+        <value>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerPlant</compClass>
+                <basePowerConsumption>-500</basePowerConsumption>
+                <transmitsPower>true</transmitsPower>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="WoodFiredGenerator"]/researchPrerequisites</xpath>
+        <value>
+            <researchPrerequisites><li>Electricity</li></researchPrerequisites>
+        </value>
+    </Operation>
+    
+    <!--============================== SolarGenerator ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="SolarGenerator"]/costList</xpath>
+        <value>    
+            <costList>
+             <SteelBar>100</SteelBar>
+             <Glass>50</Glass>
+            <Component>2</Component>
+        </costList>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="SolarGenerator"]/graphicData</xpath>
+        <value>    
+            <graphicData>
+                <texPath>Things/Building/SCPower/SolarPanel2x2</texPath>
+                <graphicClass>Graphic_Single</graphicClass>
+                <drawSize>2,2)</drawSize>
+                <damageData>
+                    <rect>(0,0.6,4,2.8)</rect>
+                </damageData>
+            </graphicData>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="SolarGenerator"]/size</xpath>
+        <value>    
+            <size>(2,2)</size>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="SolarGenerator"]/researchPrerequisites</xpath>
+        <value>
+            <researchPrerequisites><li>SolarPanels</li></researchPrerequisites>
+        </value>
+    </Operation>
+    
+    <!--============================== ChemfuelPoweredGenerator ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="ChemfuelPoweredGenerator"]/costList</xpath>
+        <value>    
+            <costList>
+                <SteelBar>100</SteelBar>
+                <Component>3</Component>
+            </costList>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="ChemfuelPoweredGenerator"]/researchPrerequisites</xpath>
+        <value>
+            <researchPrerequisites><li>SolarPanels</li></researchPrerequisites>
+        </value>
+    </Operation>
+    
+    <!--============================== WindTurbine ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="WindTurbine"]/costList</xpath>
+        <value>    
+            <costList>
+                <SteelBar>200</SteelBar>
+                <Component>5</Component>
+            </costList>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="WindTurbine"]/researchPrerequisites</xpath>
+        <value>
+            <researchPrerequisites><li>SolarPanels</li></researchPrerequisites>
+        </value>
+    </Operation>
+    
+    <!--============================== GeothermalGenerator ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="GeothermalGenerator"]/costList</xpath>
+        <value>    
+            <costList>
+                <SteelBar>500</SteelBar>
+                <PlasteelBar>50</PlasteelBar>
+                <Electronics>10</Electronics>
+                <Glass>50</Glass>
+                <Component>10</Component>
+            </costList>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="GeothermalGenerator"]/comps/li[@Class="CompProperties_Power"]</xpath>
+        <value>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerPlantSteam</compClass>
+                <basePowerConsumption>-5000</basePowerConsumption>
+                <transmitsPower>true</transmitsPower>
+            </li>
+        </value>
+    </Operation>
+    
+    <!--============================== CRAFTING ==============================-->
+    <!--============================== Smithys & Stoves ======================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="FueledSmithy"]/costList</xpath>
+        <value>
+            <costList>
+                <WoodPlank>50</WoodPlank>
+                <SteelBar>50</SteelBar>
+            </costList>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationRemove">
+        <xpath>*/ThingDef[defName = "ElectricSmithy"]/designationCategory| */ThingDef[defName = "FueledStove"]/designationCategory </xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>*/ThingDef[defName = "ElectricSmithy"]/researchPrerequisites| */ThingDef[defName = "FueledStove"]/researchPrerequisites </xpath>
+    </Operation>
+    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "FueledSmithy"]/researchPrerequisites</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>Smithing</li>
+            </researchPrerequisites>
+        </value>
+    </Operation>
+    <!--============================== NutrientPasteDispenser ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "NutrientPasteDispenser"]/costList</xpath>
+        <value>
+            <costList>
+                <Component>3</Component>
+                <SteelBar>90</SteelBar>
+                <Glass>20</Glass>
+                <Electronics>1</Electronics>
+            </costList>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "NutrientPasteDispenser"]/size</xpath>
+        <value>
+            <size>(2,1)</size>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "NutrientPasteDispenser"]/interactionCellOffset</xpath>
+        <value>
+            <interactionCellOffset>(1,0,1)</interactionCellOffset>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "NutrientPasteDispenser"]/graphicData</xpath>
+        <value>
+            <graphicData>
+                <texPath>Things/Building/SCMisc/PasteDispenser2x1</texPath>
+                <graphicClass>Graphic_Single</graphicClass>
+                <drawSize>(2,1)</drawSize>
+                <damageData>
+                    <rect>(0.02,0.25,2.96,2.85)</rect>
+                    <cornerTL>Damage/Corner</cornerTL>
+                    <cornerTR>Damage/Corner</cornerTR>
+                </damageData>
+            </graphicData>
+        </value>
+    </Operation>
+    <!--============================== hopper ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Hopper"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>15</SteelBar>
+            </costList>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName = "Hopper"]</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>NutrientPaste</li>
+            </researchPrerequisites>
+        </value>
+    </Operation>
+    
+    <!--============================== TableSculpting ==============================-->
+    <Operation Class="PatchOperationRemove">
+        <xpath>*/ThingDef[defName="TableSculpting"]/costList</xpath>
+    </Operation>
+    
+    <!--============================== ElectricTailoringBench ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="ElectricTailoringBench"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>50</SteelBar>
+                <Component>3</Component>
+            </costList>
+        </value>
+    </Operation>
+    
+    <!--============================== Brewery ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Brewery"]/costList</xpath>
+        <value>
+            <costList>
+                <WoodPlank>120</WoodPlank>
+                <SteelBar>30</SteelBar>
+            </costList>
+        </value>
+    </Operation>
+    
+    <!--============================== Refinery ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Refinery"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>150</SteelBar>
+                <Component>3</Component>
+            </costList>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName = "Refinery"]/recipes</xpath>
+        <value>
+            <li>AlchemyPlasteel</li>
+        </value>
+    </Operation>
+    
+    <!--============================== ComponentAssemblyBench ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="ComponentAssemblyBench"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>200</SteelBar>
+                <Component>15</Component>
+            </costList>
+        </value>
+    </Operation>
+    
+    <!--============================== DeepDrill ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="DeepDrill"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>100</SteelBar>
+                <Component>3</Component>
+            </costList>
+        </value>
+    </Operation>
+    
+    <!--============================== FermentingBarrel ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="FermentingBarrel"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>10</SteelBar>
+                <WoodPlank>30</WoodPlank>
+            </costList>
+        </value>
+    </Operation>
+    
+    <!--============================== ElectricCrematorium ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="ElectricCrematorium"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>20</SteelBar>
+                <Component>2</Component>
+            </costList>
+        </value>
+    </Operation>
+    
+    <!--============================== TableSculpting ==============================-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName = "TableSculpting"]</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>Art</li>
+            </researchPrerequisites>
+        </value>
+    </Operation>
+
+    <!--============================== ElectricTailoringBench ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "ElectricTailoringBench"]/researchPrerequisites</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>ComplexClothing</li>
+            </researchPrerequisites>
+        </value>
+    </Operation>
+    
+    <!--========== Sun Lamp ==========-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "SunLamp"]/graphicData</xpath>
+        <value>
+            <graphicData>
+                <texPath>Things/Building/SCMisc/SunLamp1x1</texPath>
+                <graphicClass>Graphic_Single</graphicClass>
+            </graphicData>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "SunLamp"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>40</SteelBar>
+                <Glass>10</Glass>
+            </costList>
+        </value>
+    </Operation>
+    
+    
+    <!--============================== RESEARCH ==============================-->
+    <!--============================== SimpleResearchBench==============================-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName = "SimpleResearchBench"]</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>ResearchI</li>
+            </researchPrerequisites>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "SimpleResearchBench"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>25</SteelBar>
+            </costList>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "SimpleResearchBench"]/size</xpath>
+        <value>
+            <size>(2,1)</size>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "SimpleResearchBench"]/graphicData</xpath>
+        <value>
+            <graphicData>
+                <texPath>Things/Building/Production/ResearchBenchSimple</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(3,2)</drawSize>
+                <damageData>
+                    <cornerTL>Damage/Corner</cornerTL>
+                    <cornerTR>Damage/Corner</cornerTR>
+                    <cornerBL>Damage/Corner</cornerBL>
+                    <cornerBR>Damage/Corner</cornerBR>
+                </damageData>
+            </graphicData>
+        </value>
+    </Operation>
+    
+    <!--==============================HiTechResearchBench==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "HiTechResearchBench"]/researchPrerequisites</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>ResearchII</li>
+            </researchPrerequisites>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>*/ThingDef[defName = "HiTechResearchBench"]/costStuffCount</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>*/ThingDef[defName = "HiTechResearchBench"]/stuffCategories</xpath>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "HiTechResearchBench"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>100</SteelBar>
+                <Component>10</Component>
+            </costList>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "HiTechResearchBench"]/size</xpath>
+        <value>
+            <size>(3,1)</size>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "HiTechResearchBench"]/graphicData</xpath>
+        <value>
+            <graphicData>
+                <texPath>Things/Building/SCMisc/ResearchBench3x1</texPath>
+                <graphicClass>Graphic_Single</graphicClass>
+                <shaderType>CutoutComplex</shaderType>
+                <drawSize>(3,1)</drawSize>
+                <damageData>
+                    <cornerTL>Damage/Corner</cornerTL>
+                    <cornerTR>Damage/Corner</cornerTR>
+                    <cornerBL>Damage/Corner</cornerBL>
+                    <cornerBR>Damage/Corner</cornerBR>
+                </damageData>
+            </graphicData>
+        </value>
+    </Operation>
+    
+    <!--============================== MultiAnalyzer ==============================--> 
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="MultiAnalyzer"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>100</SteelBar>
+                <PlasteelBar>50</PlasteelBar>
+                <Glass>50</Glass>
+                <GoldBar>2</GoldBar>
+            </costList>
+        </value>
+    </Operation>
+    
+    <!--============================== FURNITURE ==============================--> 
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName="AnimalSleepingBox"] | */ThingDef[defName="AnimalBed"] | */ThingDef[defName="Stool"] | */ThingDef[defName="DiningChair"] | */ThingDef[defName="Armchair"] | */ThingDef[defName="EndTable"] | */ThingDef[defName="Table1x2c"] | */ThingDef[defName="Table2x2c"] | */ThingDef[defName="Table2x4c"] | */ThingDef[defName="Table3x3c"] | */ThingDef[defName="PlantPot"] | */ThingDef[defName="Shelf"] | */ThingDef[defName="Dresser"]</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>Beds</li>
+            </researchPrerequisites>
+        </value>
+    </Operation> 
+    <!--============================== lamps ==============================--> 
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[@Name="StandingLampBase"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>5</SteelBar>
+                <Glass>10</Glass>
+            </costList>
+        </value>
+    </Operation> 
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName="TorchLamp"]</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>Survival</li>
+            </researchPrerequisites>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[@Name="LampBase"]/researchPrerequisites</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>Autodoors</li>
+            </researchPrerequisites>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>*/ThingDef[defName="StandingLamp_Red"]/researchPrerequisites | */ThingDef[defName="StandingLamp_Green"]/researchPrerequisites | */ThingDef[defName="StandingLamp_Blue"]/researchPrerequisites</xpath>
+    </Operation>
+    
+    
+    <!--============================== beds ==============================--> 
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[@Name="BedBase"]/comps</xpath>
+        <value>
+            <li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>EndTable</li>
+                    <li>Dresser</li>
+                    <li>SpaceshipShelf</li>
+                    <li>SpaceshipLocker</li>
+                    <li>SpaceshipDesk</li>
+                    <li>SpaceshipCabinet</li>
+                </linkableFacilities>
+            </li>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName="Bed"]</xpath>
+        <value>
+            <costList>
+                <Cloth>10</Cloth>
+            </costList>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName="DoubleBed"] </xpath>
+        <value>
+            <costList>
+                <Cloth>20</Cloth>
+            </costList>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="RoyalBed"]/costList </xpath>
+        <value>
+            <costList>
+                <GoldBar>5</GoldBar>
+                <Cloth>40</Cloth>
+            </costList>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="HospitalBed"]/costList </xpath>
+        <value>
+            <costList>
+                <Medicine>10</Medicine>
+                <Cloth>20</Cloth>
+            </costList>
+        </value>
+    </Operation>
+    
+    <!--============================== JOY ==============================--> 
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName="ChessTable"] | */ThingDef[defName="BilliardsTable"] | */ThingDef[defName="PokerTable"] </xpath>
+        <value>
+            <researchPrerequisites>
+                <li>FurnitureII</li>
+            </researchPrerequisites>
+        </value>
+    </Operation> 
+ 
+    <!--============================== MISC ==============================--> 
+    <!--============================== communications ==============================--> 
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="OrbitalTradeBeacon"]/researchPrerequisites</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>Communications</li>
+            </researchPrerequisites>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="OrbitalTradeBeacon"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>60</SteelBar>
+                <Glass>20</Glass>
+                <Component>1</Component>
+            </costList>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="CommsConsole"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>100</SteelBar>
+                <Glass>20</Glass>
+                <Component>4</Component>
+            </costList>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="CommsConsole"]/graphicData</xpath>
+        <value>
+            <graphicData>
+                <texPath>Things/Building/SCMisc/CommsConsole2x1</texPath>
+                <graphicClass>Graphic_Single</graphicClass>
+                <drawSize>(2,1)</drawSize>
+                <damageData>
+                    <rect>(0,0,3,1.8)</rect>
+                    <cornerBL>Damage/Corner</cornerBL>
+                    <cornerBR>Damage/Corner</cornerBR>
+                </damageData>
+            </graphicData>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="CommsConsole"]/interactionCellOffset</xpath>
+        <value>
+            <interactionCellOffset>(1,0,-1)</interactionCellOffset>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="CommsConsole"]/size</xpath>
+        <value>
+            <size>(2,1)</size>
+        </value>
+    </Operation>    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="CommsConsole"]/researchPrerequisites</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>Communications</li>
+            </researchPrerequisites>
+        </value>
+    </Operation>
+    <!--============================== FirefoamPopper ==============================--> 
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="FirefoamPopper"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>75</SteelBar>
+                <Component>1</Component>
+            </costList>
+        </value>
+    </Operation>
+    
+    <!--============================== MoisturePump ==============================--> 
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="MoisturePump"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>75</SteelBar>
+                <Glass>20</Glass>
+                <Electronics>25</Electronics>
+                <Component>30</Component>
+                <AdvancedComponent>3</AdvancedComponent>
+            </costList>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="MoisturePump"]/label</xpath>
+        <value>
+            <label>Terraforming pump</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="MoisturePump"]/description</xpath>
+        <value>
+            <description>Slowly expands a field of any soi or water around itself.</description>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="MoisturePump"]/comps</xpath>
+        <value>
+            <comps>
+                <li Class="CompProperties_Power">
+                    <compClass>CompPowerTrader</compClass>
+                    <startElectricalFires>true</startElectricalFires>
+                    <basePowerConsumption>150</basePowerConsumption>
+                    <shortCircuitInRain>false</shortCircuitInRain>
+                </li>
+                <li Class="SuperiorCrafting.CompProperties_Terraforming">
+                    <radius>6.9</radius>
+                    <daysToRadius>6.9</daysToRadius>
+                </li>
+            </comps>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName="MoisturePump"]</xpath>
+        <value>
+            <thingClass>SuperiorCrafting.Buildings.Building_MultiTerraformingPump</thingClass>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName="MoisturePump"]</xpath>
+        <value>
+            <inspectorTabs>
+                <li> SuperiorCrafting.ITabs.ITab_TerraformingPump</li>
+            </inspectorTabs>
+        </value>
+    </Operation>
+    <!--============================== GroundPenetratingScanner ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="GroundPenetratingScanner"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>200</SteelBar>
+                <Component>8</Component>
+            </costList>
+        </value>
+    </Operation>
+    
+    <!--============================== LongRangeMineralScanner ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="LongRangeMineralScanner"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>400</SteelBar>
+                <Component>12</Component>
+            </costList>
+        </value>
+    </Operation>
+    
+    <!--============================== PodLauncher ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="PodLauncher"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>80</SteelBar>
+                <Component>3</Component>
+            </costList>
+        </value>
+    </Operation>
+    
+    <!--============================== TransportPod ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="TransportPod"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>80</SteelBar>
+                <Component>1</Component>
+            </costList>
+        </value>
+    </Operation>
+    
+    <!--============================== Sarcophagus ==============================-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName="Sarcophagus"]</xpath>
+        <value>
+            <researchPrerequisites><li>Stonecutting</li></researchPrerequisites>
+        </value>
+    </Operation>
+    
+    <!--============================== CryptosleepCasket ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="CryptosleepCasket"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>180</SteelBar>
+                <UraniumBar>2</UraniumBar>
+                <Component>8</Component>
+                <Electronics>5</Electronics>
+            </costList>
+        </value>
+    </Operation>
+    
+    <!--============================== VitalsMonitor ==============================--> 
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="VitalsMonitor"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>50</SteelBar>
+                <Electronics>1</Electronics>
+                <Glass>10</Glass>
+            </costList>
+        </value>
+    </Operation>
+    
+    <!--============================== ToolCabinet ==============================--> 
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="ToolCabinet"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>75</SteelBar>
+                <Component>3</Component>
+            </costList>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName="ToolCabinet"]</xpath>
+        <value>
+            <researchPrerequisites><li>ElectricSmelting</li></researchPrerequisites>
+        </value>
+    </Operation>
+    
+    
+    <!--============================== SECURITY ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[@Name="BaseArtilleryBuilding"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>100</SteelBar>
+                <Component>5</Component>
+            </costList>
+        </value>
+    </Operation>
+    
+    <!--============================== SHIP ==============================--> 
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "Ship_Beam"]/costList/Steel | */ThingDef[defName = "Ship_CryptosleepCasket"]/costList/Steel | */ThingDef[defName = "Ship_ComputerCore"]/costList/Steel | */ThingDef[defName = "Ship_Reactor"]/costList/Steel | */ThingDef[defName = "Ship_Engine"]/costList/Steel | */ThingDef[defName = "Ship_SensorCluster"]/costList/Steel</xpath>
+        <value><SteelBar>400</SteelBar></value>
+    </Operation>
+    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "Ship_CryptosleepCasket"]/costList/Uranium</xpath>
+        <value><UraniumBar>2</UraniumBar></value>
+    </Operation>
+    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "Ship_Reactor"]/costList/Uranium | */ThingDef[defName = "Ship_Engine"]/costList/Uranium</xpath>
+        <value><UraniumBar>10</UraniumBar></value>
+    </Operation>
+    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "Ship_ComputerCore"]/costList/Gold</xpath>
+        <value><GoldBar>10</GoldBar></value>
+    </Operation>
+    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "Ship_SensorCluster"]/costList/Gold</xpath>
+        <value><GoldBar>1</GoldBar></value>
+    </Operation>
+    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "Ship_Beam"]/costList/Plasteel</xpath>
+        <value><PlasteelBar>75</PlasteelBar></value>
+    </Operation>
+    
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName = "Ship_Reactor"]/costList/Plasteel | */ThingDef[defName = "Ship_Engine"]/costList/Plasteel</xpath>
+        <value><PlasteelBar>300</PlasteelBar></value>
+    </Operation>
+</Patch>

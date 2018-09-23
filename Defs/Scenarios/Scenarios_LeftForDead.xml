@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<FactionDef ParentName="PlayerFactionBase">
+		<defName>Leftfordead</defName>
+		<label>Stranded survivors</label>
+		<description>Your own community.</description>
+		<isPlayer>true</isPlayer>
+		<basicMemberKind>Colonist</basicMemberKind>
+		<pawnsPlural>colonists</pawnsPlural>
+		<techLevel>Neolithic</techLevel>
+		<backstoryCategory>Raider</backstoryCategory>
+		<expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
+		<baseNameMaker>NamerFactionBasePlayerColony</baseNameMaker>
+		<baseNameMakerPlayer>NamerFactionPlayerColonyRandomized</baseNameMakerPlayer>
+		<factionNameMakerPlayer>NamerFactionBasePlayerColonyRandomized</factionNameMakerPlayer>
+		<geneticVariance>1</geneticVariance>
+		<hairTags>
+			<li>Urban</li>
+		</hairTags>
+		<apparelStuffFilter>
+			<thingDefs>
+				<li>Synthread</li>
+			</thingDefs>
+		</apparelStuffFilter>
+	</FactionDef>
+	
+	<ScenarioDef>
+		<defName>Leftfordead</defName>
+		<label>Superior Crafting: Left for dead</label>
+		<description>Stranded alone in an alien world.\nDifficulty level:Impossible (Recommended only to very experienced players) \nThis is how originally superior crafting is meant to be played.</description>
+		<scenario>
+			<summary>A mercenary left for dead.\nDifficulty level:Impossible (Recommended only to very experienced players)</summary>
+			<playerFaction>
+				<def>PlayerFaction</def>
+				<factionDef>Leftfordead</factionDef>
+			</playerFaction>
+			<parts>
+
+				<!-- Config pages -->
+				<li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+					<def>ConfigPage_ConfigureStartingPawns</def>
+					<pawnCount>1</pawnCount>
+          			<pawnChoiceCount>10</pawnChoiceCount>
+				</li>
+
+				<!-- Player starting stuff spawn method-->
+				<li Class="ScenPart_PlayerPawnsArriveMethod">
+					<def>PlayerPawnsArriveMethod</def>
+					<method>Standing</method>
+				</li>
+
+				<!-- Player pawns modifiers -->
+				
+				<li Class="ScenPart_ForcedHediff">
+					<def>ForcedHediff</def>
+					<visible>true</visible>
+					<context>PlayerStarter</context>
+					<chance>1.0</chance>
+					<hediff>Malnutrition</hediff>
+					<severityRange>
+						<min>0.1</min>
+						<max>0.6</max>
+					</severityRange>
+				</li>
+				
+				<li Class="ScenPart_SetNeedLevel">
+					<def>SetNeedLevel</def>
+					<visible>false</visible>
+					<context>PlayerStarter</context>
+					<chance>1.0</chance>
+					<need>Food</need>
+					<levelRange>
+						<min>0.2</min>
+						<max>0.2</max>
+					</levelRange>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Gun_ChargeRifle</thingDef>
+					<count>1</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Apparel_PowerArmor</thingDef>
+					<count>1</count>
+				</li>
+
+				<!-- Game start dialog -->
+				<li Class="ScenPart_GameStartDialog">
+					<def>GameStartDialog</def>
+					<text>After a long galactic battle your spaceship was severely damaged but you and your crew managed to escape and do an emergency landing in the first habitable planet in range.\nBut it wasn't over!\nDuring the first reconnaissance mission of the surrounding habitat your squad was ambushed by a strange unknown machine-like alien lifeforms.\nThey were too many and their weapons too powerful then you decided to RUN till your legs collapsed and leave your squad behind.\nAfter a long desperate run for your life you stop to catch your breath, you look around for a while, everything  seemed so quiet ... and only the sound of the wind in the leaves and the animal sounds in the distace broke the silence...  \nThe armor makes you feel hot... you took it off, your rifle is heavy you drop it on the ground.\nThen you realized that you were hungry and alone...</text>
+					<closeSound>GameStartSting</closeSound>
+				</li>
+
+			</parts>
+		</scenario>
+	</ScenarioDef>
+</Defs>

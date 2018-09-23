@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    
+    <!--=============== Basic Resource Tables Electric ====================-->
+    
+    <ThingDef ParentName="BenchBase">
+        <defName>ElectricSmelter</defName>
+        <label>electric smelter</label>
+        <thingClass>Building_WorkTable</thingClass>
+        <description>An electric smelter that quickly turns metal ore and slags into bars. Consumes a lot of power.</description>
+        <graphicData>
+            <texPath>Things/Building/SCProduction/TableSmelter3x1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(3,1)</drawSize>
+        </graphicData>
+        <constructEffect>ConstructMetal</constructEffect>
+        <costList>
+            <SteelBar>120</SteelBar>
+        </costList>
+        <altitudeLayer>Building</altitudeLayer>
+        <fillPercent>0.5</fillPercent>
+        <useHitPoints>True</useHitPoints>
+        <statBases>
+            <WorkToBuild>3000</WorkToBuild>
+            <MaxHitPoints>240</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+        </statBases>
+        <size>(3,1)</size>
+        <designationCategory>Production</designationCategory>
+        <passability>Impassable</passability>
+        <hasInteractionCell>True</hasInteractionCell>
+        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+        <recipes>
+            <li>MakeSteelBars_Electric</li>
+            <li>MakeSilverBars_Electric</li>
+            <li>MakeGoldBars_Electric</li>
+            <li>MakeUraniumBars_Electric</li>
+            <li>MakePlasteelBars_Electric</li>
+            <li>ExtractMetalFromSlag_Electric</li>
+            <li>SmeltWeapon</li>
+        </recipes>
+        <surfaceType>Item</surfaceType>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+        </inspectorTabs>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <startElectricalFires>true</startElectricalFires>
+                <basePowerConsumption>700</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+            <li Class="CompProperties_Glower">
+                <glowRadius>6</glowRadius>
+                <glowColor>(217,112,33,0)</glowColor>
+            </li>
+            <li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>ToolCabinet</li>
+                </linkableFacilities>
+            </li>
+            <li Class="CompProperties_Breakdownable"/>
+        </comps>
+        <building>
+            <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+            <heatPerTickWhileWorking>0.5</heatPerTickWhileWorking>
+        </building>
+        <researchPrerequisites>
+            <li>ElectricSmelting</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+
+    <ThingDef ParentName="BenchBase">
+        <defName>TableGlassworks</defName>
+        <label>Glassworks</label>
+        <thingClass>Building_WorkTable</thingClass>
+        <description>A table with tools for creating raw glass out of sand.</description>
+        <graphicData>
+            <texPath>Things/Building/SCProduction/Glassworks3x1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(3,1)</drawSize>
+        </graphicData>
+        <constructEffect>ConstructMetal</constructEffect>
+        <costList>
+            <SteelBar>90</SteelBar>
+        </costList>
+        <altitudeLayer>Building</altitudeLayer>
+        <fillPercent>0.5</fillPercent>
+        <useHitPoints>True</useHitPoints>
+        <statBases>
+            <WorkToBuild>2250</WorkToBuild>
+            <MaxHitPoints>180</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+        </statBases>
+        <size>(3,1)</size>
+        <designationCategory>Production</designationCategory>
+        <passability>Impassable</passability>
+        <hasInteractionCell>True</hasInteractionCell>
+        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+        <recipes>
+            <li>MakeGlass</li>
+        </recipes>
+        <surfaceType>Item</surfaceType>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+        </inspectorTabs>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <startElectricalFires>true</startElectricalFires>
+                <basePowerConsumption>500</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+            <li Class="CompProperties_Glower">
+                <glowRadius>6</glowRadius>
+                <glowColor>(217,112,33,0)</glowColor>
+            </li>
+            <li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>ToolCabinet</li>
+                </linkableFacilities>
+            </li>
+            <li Class="CompProperties_Breakdownable"/>
+        </comps>
+        <building>
+            <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+            <heatPerTickWhileWorking>0.5</heatPerTickWhileWorking>
+        </building>
+        <researchPrerequisites>
+            <li>ElectricSmelting</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+
+
+
+
+    <ThingDef ParentName="BenchBase">
+        <defName>TableLoom</defName>
+        <label>tailor's loom</label>
+        <thingClass>Building_WorkTable</thingClass>
+        <description>A tailor's table used to spin raw materials into usable cloth.</description>
+        <graphicData>
+            <texPath>Things/Building/SCProduction/TableLoom3x2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(3,2)</drawSize>
+        </graphicData>
+        <costList>
+            <WoodPlank>60</WoodPlank>
+            <SteelBar>30</SteelBar>
+        </costList>
+        <constructEffect>ConstructWood</constructEffect>
+        <altitudeLayer>Building</altitudeLayer>
+        <fillPercent>0.5</fillPercent>
+        <useHitPoints>True</useHitPoints>
+        <statBases>
+            <WorkToBuild>2250</WorkToBuild>
+            <MaxHitPoints>180</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+        </statBases>
+        <size>(3,2)</size>
+        <designationCategory>Production</designationCategory>
+        <passability>Impassable</passability>
+        <hasInteractionCell>True</hasInteractionCell>
+        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+        <recipes>
+            <li>MakeCloth</li>
+            <li>MakeSynthreadCloth</li>
+            <li>MakeDevilstrand</li>
+            <li>MakeHyperweaveCloth</li>
+        </recipes>
+        <surfaceType>Item</surfaceType>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+        </inspectorTabs>
+        <building>
+            <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+        </building>
+        <comps>
+            <li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>ToolCabinet</li>
+                </linkableFacilities>
+            </li>
+        </comps>
+        <researchPrerequisites>
+            <li>ComplexClothing</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+    <!--=============== Advanced Work tables Electric ====================-->
+
+
+    <ThingDef ParentName="BenchBase">
+        <defName>ElectricStove</defName>
+        <label>cook stove</label>
+        <thingClass>Building_WorkTable</thingClass>
+        <description>A simple stove and attached countertop for preparing meals.</description>
+        <graphicData>
+            <texPath>Things/Building/SCProduction/CookStove3x1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(3,1)</drawSize>
+        </graphicData>
+        <constructEffect>ConstructMetal</constructEffect>
+        <costList>
+            <WoodPlank>60</WoodPlank>
+            <SteelBar>30</SteelBar>
+        </costList>
+        <altitudeLayer>Building</altitudeLayer>
+        <fillPercent>0.5</fillPercent>
+        <useHitPoints>True</useHitPoints>
+        <statBases>
+            <WorkToBuild>2250</WorkToBuild>
+            <MaxHitPoints>180</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+        </statBases>
+        <size>(3,1)</size>
+        <designationCategory>Production</designationCategory>
+        <passability>Impassable</passability>
+        <hasInteractionCell>True</hasInteractionCell>
+        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+        <recipes>
+            <li>ButcherCorpseFlesh</li>
+            <li>CookMealSimple</li>
+            <li>CookMealFine</li>
+            <li>CookMealLavish</li>
+            <li>CookMealSurvival</li>
+            <li>CookMealJerky</li>
+            <li>MakePemmican</li>
+            <li>CookMealSalad</li>
+            <li>MakeKibble</li>
+            <li>CookMealSimple_Bulk</li>
+            <li>CookMealFine_Bulk</li>
+            <li>CookMealLavish_Bulk</li>
+            <li>CookMealSurvival_Bulk</li>
+            <li>CookMealJerky_Bulk</li>
+            <li>CookMealSalad_Bulk</li>
+        </recipes>
+        <surfaceType>Item</surfaceType>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+        </inspectorTabs>
+
+        <building>
+            <isMealSource>true</isMealSource>
+            <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+            <heatPerTickWhileWorking>0.25</heatPerTickWhileWorking>
+        </building>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <startElectricalFires>true</startElectricalFires>
+                <basePowerConsumption>350</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+
+            <li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>ToolCabinet</li>
+                </linkableFacilities>
+            </li>
+            <li Class="CompProperties_Breakdownable"/>
+        </comps>
+        <researchPrerequisites>
+            <li>ElectricSmelting</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+
+    <ThingDef ParentName="BenchBase">
+        <defName>TableMachining</defName>
+        <label>smithing table</label>
+        <thingClass>Building_WorkTable</thingClass>
+        <description>An advanced smithing table with tools for crafting electronic chips, weapons, armor, advanced weaponized prosthetics, and artillery shells.</description>
+        <graphicData>
+            <texPath>Things/Building/SCProduction/TableSmithing3x1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(3,1)</drawSize>
+        </graphicData>
+        <costList>
+            <SteelBar>100</SteelBar>
+            <PlasteelBar>50</PlasteelBar>
+        </costList>
+        <constructEffect>ConstructMetal</constructEffect>
+        <altitudeLayer>Building</altitudeLayer>
+        <fillPercent>0.5</fillPercent>
+        <useHitPoints>True</useHitPoints>
+        <statBases>
+            <WorkToBuild>3750</WorkToBuild>
+            <MaxHitPoints>300</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+        </statBases>
+        <size>(3,1)</size>
+        <designationCategory>Production</designationCategory>
+        <passability>Impassable</passability>
+        <hasInteractionCell>True</hasInteractionCell>
+        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+        <recipes>
+            <li>MakeElectronics</li>
+            <li>MakePowerClaw</li>
+            <li>MakeScytherBlade</li>
+        </recipes>
+        <surfaceType>Item</surfaceType>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+        </inspectorTabs>
+        <building>
+            <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+        </building>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <startElectricalFires>true</startElectricalFires>
+                <basePowerConsumption>500</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+
+            <li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>ToolCabinet</li>
+                </linkableFacilities>
+            </li>
+            <li Class="CompProperties_Breakdownable"/>
+        </comps>
+        <researchPrerequisites>
+            <li>Machining</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+    <ThingDef ParentName="BenchBase">
+        <defName>TableSmithing</defName>
+        <label>powered crafting table</label>
+        <thingClass>Building_WorkTable</thingClass>
+        <description>An advanced electrically-powered crafting table capable of quickly processing raw materials and butchering mechanoids. Simple prosthetics and medieval weapons can also be made here totally replacing the obsolete fueled smithing table, the sawmill and the craftsman's table.</description>
+        <graphicData>
+            <texPath>Things/Building/SCProduction/PoweredCrafting3x1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(3,1)</drawSize>
+        </graphicData>
+        <costList>
+            <WoodPlank>20</WoodPlank>
+            <SteelBar>100</SteelBar>
+        </costList>
+        <constructEffect>ConstructMetal</constructEffect>
+        <altitudeLayer>Building</altitudeLayer>
+        <fillPercent>0.5</fillPercent>
+        <useHitPoints>True</useHitPoints>
+        <statBases>
+            <WorkToBuild>3000</WorkToBuild>
+            <MaxHitPoints>240</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+            <WorkTableWorkSpeedFactor>1.5</WorkTableWorkSpeedFactor>
+        </statBases>
+        <size>(3,1)</size>
+        <designationCategory>Production</designationCategory>
+        <passability>Impassable</passability>
+        <hasInteractionCell>True</hasInteractionCell>
+        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+        <recipes>
+            <li>MakeWoodPlanks_Electric</li>
+            <li>MakeKindling_Electric</li>
+            <li>MakeStoneBlocksAny</li>
+            <li>MakeStoneBlocksSandstone</li>
+            <li>MakeStoneBlocksGranite</li>
+            <li>MakeStoneBlocksLimestone</li>
+            <li>MakeStoneBlocksSlate</li>
+            <li>MakeStoneBlocksMarble</li>
+            <li>MakeStoneBlocksJade</li>
+            <li>MakeSand_Electric</li>
+            <li>ButcherCorpseMechanoid</li>
+            <li>MakeSimpleProstheticArm</li>
+            <li>MakeSimpleProstheticLeg</li>
+            <li>MakeSteelDenture</li>
+            <li>Make_MeleeWeapon_Shiv</li>
+            <li>Make_MeleeWeapon_Knife</li>
+            <li>Make_MeleeWeapon_Club</li>
+            <li>Make_MeleeWeapon_Mace</li>
+            <li>Make_MeleeWeapon_Gladius</li>
+            <li>Make_MeleeWeapon_Ikwa</li>
+            <li>Make_MeleeWeapon_Spear</li>
+            <li>Make_MeleeWeapon_LongSword</li>
+            <li>Make_Bow_Short</li>
+            <li>Make_Bow_Recurve</li>
+            <li>Make_Bow_Great</li>
+            <li>Make_Pila</li>
+
+        </recipes>
+        <surfaceType>Item</surfaceType>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+        </inspectorTabs>
+        <building>
+            <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+        </building>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <startElectricalFires>true</startElectricalFires>
+                <basePowerConsumption>350</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+            <li Class="CompProperties_Glower">
+                <glowRadius>3</glowRadius>
+                <glowColor>(217,112,33,0)</glowColor>
+            </li>
+            <li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>ToolCabinet</li>
+                </linkableFacilities>
+            </li>
+            <li Class="CompProperties_Breakdownable"/>
+        </comps>
+        <researchPrerequisites>
+            <li>ElectricSmelting</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+
+    <ThingDef ParentName="BenchBase">
+        <defName>DrugLab</defName>
+        <label>Chemlab</label>
+        <thingClass>Building_WorkTable</thingClass>
+        <description>A chemical laboratory with all the equipment needed to create medkits, and advanced prosthetics.</description>
+        <graphicData>
+            <texPath>Things/Building/SCProduction/TableLab3x1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(3,1)</drawSize>
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+        </graphicData>
+        <costList>
+            <SteelBar>100</SteelBar>
+            <Glass>100</Glass>
+            <Electronics>5</Electronics>
+        </costList>
+        <altitudeLayer>Building</altitudeLayer>
+        <fillPercent>0.5</fillPercent>
+        <useHitPoints>True</useHitPoints>
+        <statBases>
+            <WorkToBuild>3500</WorkToBuild>
+            <MaxHitPoints>120</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+        </statBases>
+        <size>(3,1)</size>
+        <designationCategory>Production</designationCategory>
+        <passability>PassThroughOnly</passability>
+        <pathCost>70</pathCost>
+        <hasInteractionCell>True</hasInteractionCell>
+        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+        <recipes>
+            <li>MakeGlitterworldMedicine</li>
+            <li>MakeArtificialBone</li>
+            <li>MakeAdvancedProstheticArm</li>
+            <li>MakeAdvancedProstheticLeg</li>
+            <li>MakePlasteelDenture</li>
+        </recipes>
+        <surfaceType>Item</surfaceType>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+        </inspectorTabs>
+        <building>
+            <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+        </building>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <startElectricalFires>true</startElectricalFires>
+                <basePowerConsumption>350</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+            <li Class="CompProperties_Glower">
+                <glowRadius>5</glowRadius>
+                <glowColor>(0,0,217,0)</glowColor>
+            </li>
+            <li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>ToolCabinet</li>
+                </linkableFacilities>
+            </li>
+            <li Class="CompProperties_Breakdownable"/>
+        </comps>
+        <placeWorkers>
+            <li>PlaceWorker_ShowFacilitiesConnections</li>
+        </placeWorkers>
+        <researchPrerequisites>
+            <li>DrugProduction</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+    <ThingDef ParentName="BenchBase">
+        <defName>TableOrganvat</defName>
+        <label>organ vat</label>
+        <thingClass>Building_WorkTable</thingClass>
+        <description>A large vat used to turn fresh human corpses into biomatter, and grow replacement organs and limbs.</description>
+        <graphicData>
+            <texPath>Things/Building/SCProduction/TableOrganvat2x2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2,2)</drawSize>
+        </graphicData>
+        <constructEffect>ConstructMetal</constructEffect>
+        <costList>
+            <SteelBar>90</SteelBar>
+            <PlasteelBar>30</PlasteelBar>
+            <Electronics>5</Electronics>
+        </costList>
+        <altitudeLayer>Building</altitudeLayer>
+        <fillPercent>0.5</fillPercent>
+        <useHitPoints>True</useHitPoints>
+        <statBases>
+            <WorkToBuild>3000</WorkToBuild>
+            <MaxHitPoints>240</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+        </statBases>
+        <size>(2,2)</size>
+        <designationCategory>Production</designationCategory>
+        <passability>Impassable</passability>
+        <hasInteractionCell>True</hasInteractionCell>
+        <interactionCellOffset>(1,0,-1)</interactionCellOffset>
+        <recipes>
+            <li>ExtractBiomatterCorpse</li>
+            <li>MakeNaturalLeg</li>
+            <li>MakeNaturalArm</li>
+            <li>MakeNaturalEye</li>
+            <li>MakeNaturalEar</li>
+            <li>MakeNaturalNose</li>
+            <li>MakeNaturalHeart</li>
+            <li>MakeNaturalLung</li>
+            <li>MakeNaturalLiver</li>
+            <li>MakeNaturalKidney</li>
+            <li>MakeNaturalStomach</li>
+        </recipes>
+        <surfaceType>Item</surfaceType>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+        </inspectorTabs>
+        <building>
+            <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+        </building>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <startElectricalFires>true</startElectricalFires>
+                <basePowerConsumption>450</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+            <li Class="CompProperties_Glower">
+                <glowRadius>5</glowRadius>
+                <glowColor>(0,217,0,0)</glowColor>
+            </li>
+            <li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>ToolCabinet</li>
+                </linkableFacilities>
+            </li>
+            <li Class="CompProperties_Breakdownable"/>
+        </comps>
+        <researchPrerequisites>
+            <li>Cryptosleep</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+    <ThingDef ParentName="BenchBase">
+        <defName>TableBionics</defName>
+        <label>bionic crafting table</label>
+        <thingClass>Building_WorkTable</thingClass>
+        <description>An advanced work station used to create bionic replacement parts.</description>
+        <graphicData>
+            <texPath>Things/Building/SCProduction/TableBionic3x1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(3,1)</drawSize>
+        </graphicData>
+        <constructEffect>ConstructMetal</constructEffect>
+        <costList>
+            <SteelBar>90</SteelBar>
+            <PlasteelBar>30</PlasteelBar>
+            <Glass>30</Glass>
+            <Electronics>5</Electronics>
+        </costList>
+        <altitudeLayer>Building</altitudeLayer>
+        <fillPercent>0.5</fillPercent>
+        <useHitPoints>True</useHitPoints>
+        <statBases>
+            <WorkToBuild>3750</WorkToBuild>
+            <MaxHitPoints>300</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+        </statBases>
+        <size>(3,1)</size>
+        <designationCategory>Production</designationCategory>
+        <passability>Impassable</passability>
+        <hasInteractionCell>True</hasInteractionCell>
+        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+        <recipes>
+            <li>MakeBionicEye</li>
+            <li>MakeBionicEar</li>
+            <li>MakeBionicArm</li>
+            <li>MakeBionicLeg</li>
+            <li>MakeBionicSpine</li>
+            <li>MakeBionicBrain</li>
+        </recipes>
+        <surfaceType>Item</surfaceType>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+        </inspectorTabs>
+        <building>
+            <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+        </building>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <startElectricalFires>true</startElectricalFires>
+                <basePowerConsumption>300</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+            <li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>ToolCabinet</li>
+                </linkableFacilities>
+            </li>
+            <li Class="CompProperties_Breakdownable"/>
+        </comps>
+        <researchPrerequisites>
+            <li>MedicineIV</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+    <ThingDef ParentName="BenchBase">
+        <defName>TableComposter</defName>
+        <label>composter</label>
+        <thingClass>Building_WorkTable</thingClass>
+        <description>A composter used to turn wood logs into mulch.</description>
+        <graphicData>
+            <texPath>Things/Building/SCProduction/TableComposter1x2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1,2)</drawSize>
+        </graphicData>
+        <costList>
+            <SteelBar>90</SteelBar>
+        </costList>
+        <constructEffect>ConstructMetal</constructEffect>
+        <altitudeLayer>Building</altitudeLayer>
+        <fillPercent>0.5</fillPercent>
+        <useHitPoints>True</useHitPoints>
+        <statBases>
+            <WorkToBuild>2250</WorkToBuild>
+            <MaxHitPoints>180</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+        </statBases>
+        <size>(1,2)</size>
+        <designationCategory>Production</designationCategory>
+        <passability>Impassable</passability>
+        <hasInteractionCell>True</hasInteractionCell>
+        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+        <recipes>
+            <li>MakeMulch</li>
+        </recipes>
+        <surfaceType>Item</surfaceType>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+        </inspectorTabs>
+
+        <building>
+            <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+        </building>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <startElectricalFires>true</startElectricalFires>
+                <basePowerConsumption>150</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+            <li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>ToolCabinet</li>
+                </linkableFacilities>
+            </li>
+            <li Class="CompProperties_Breakdownable"/>
+        </comps>
+        <researchPrerequisites>
+            <li>Devilstrand</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+    <ThingDef ParentName="BenchBase">
+        <defName>HydroponicsBasin</defName>
+        <label>hydroponics basin</label>
+        <description>For growing food. Hydroponics basins grow plants quickly. The basin requires power to work, provides their own light source, but plants will die if power is cut.</description>
+        <thingClass>Building_PlantGrower</thingClass>
+        <graphicData>
+            <texPath>Things/Building/SCProduction/Hydroponics_Atlas</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <linkType>Basic</linkType>
+            <linkFlags>
+                <li>Custom1</li>
+            </linkFlags>
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+        </graphicData>
+        <blueprintGraphicData>
+            <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+        </blueprintGraphicData>
+        <uiIconPath>Things/Building/SCProduction/Hydroponics_Ico</uiIconPath>
+        <altitudeLayer>FloorEmplacement</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <pathCost>60</pathCost>
+        <castEdgeShadows>true</castEdgeShadows>
+        <constructEffect>ConstructMetal</constructEffect>
+        <fillPercent>0.30</fillPercent>
+        <canOverlapZones>false</canOverlapZones>
+        <statBases>
+            <WorkToBuild>2800</WorkToBuild>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+            <Cleanliness>-3</Cleanliness>
+        </statBases>
+        <size>(1,1)</size>
+        <costList>
+            <SteelBar>20</SteelBar>
+            <Glass>20</Glass>
+            <Mulch>20</Mulch>
+        </costList>
+        <fertility>2.3</fertility>
+        <building>
+            <defaultPlantToGrow>PlantGrass</defaultPlantToGrow>
+            <sowTag>Hydroponic</sowTag>
+        </building>
+        <placingDraggableDimensions>1</placingDraggableDimensions>
+        <tickerType>Rare</tickerType>
+        <rotatable>false</rotatable>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <researchPrerequisites>
+            <li>Hydroponics</li>
+        </researchPrerequisites>
+        <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+        <designationCategory>Production</designationCategory>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <startElectricalFires>true</startElectricalFires>
+                <basePowerConsumption>50</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+            <li Class="CompProperties_Glower">
+                <overlightRadius>3.0</overlightRadius>
+                <glowRadius>3</glowRadius>
+                <glowColor>(0,217,0,0)</glowColor>
+            </li>
+            <li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>ToolCabinet</li>
+                </linkableFacilities>
+            </li>
+            <li Class="CompProperties_Breakdownable"/>
+            <li Class="CompProperties_Forbiddable"/>
+        </comps>
+    </ThingDef>
+</Defs>

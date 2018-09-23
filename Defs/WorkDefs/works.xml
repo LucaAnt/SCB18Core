@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <WorkTypeDef>
+        <defName>Training_Pawn</defName>
+        <labelShort>Training</labelShort>
+        <pawnLabel>Training</pawnLabel>
+        <gerundLabel>Training</gerundLabel>
+        <description>Allowed to go train skills</description>
+        <verb>Train</verb>
+        <naturalPriority>50</naturalPriority>
+    </WorkTypeDef>
+    
+    <JobDef>
+        <defName>JobDriver_Training_Dummy</defName>
+        <driverClass>SuperiorCrafting.JobDriver_Training</driverClass>
+        <reportString>Training</reportString>
+    </JobDef>
+    
+    <JobDef>
+        <defName>JobDriver_HarvestSand</defName>
+        <driverClass>SuperiorCrafting.JobDrivers.JobDriver_HarvestSand</driverClass>
+        <reportString>Harvesting sand</reportString>
+    </JobDef>
+    
+</Defs>

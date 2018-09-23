@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <TerrainDef>
+        <defName>SoilFertilized</defName>
+        <label>Fertilized soil</label>
+        <texturePath>Terrain/Surfaces/SoilRich</texturePath>
+        <edgeType>FadeRough</edgeType>
+        <renderPrecedence>335</renderPrecedence>
+        <pathCost>2</pathCost>
+        <statBases>
+            <WorkToBuild>150</WorkToBuild>
+            <Beauty>-1</Beauty>
+            <Cleanliness>-1</Cleanliness>
+        </statBases>
+        <affordances>
+            <li>Light</li>
+            <li>Heavy</li>
+            <li>GrowSoil</li>
+            <li>Diggable</li>
+        </affordances>
+        <terrainFilthDef>FilthDirt</terrainFilthDef>
+        <fertility>2.0</fertility>
+        <takeFootprints>True</takeFootprints>
+        <constructEffect>ConstructDirt</constructEffect>
+        <designationCategory>Floors</designationCategory>
+        <costList>
+            <Mulch>10</Mulch>
+        </costList>
+        <researchPrerequisites>
+            <li>Devilstrand</li>
+        </researchPrerequisites>
+    </TerrainDef>
+    
+    <TerrainDef>
+        <defName>GlitterWorldFertilized</defName>
+        <label>Glitterworld soil</label>
+        <texturePath>Terrain/Surfaces/SoilGlitter</texturePath>
+        <edgeType>FadeRough</edgeType>
+        <renderPrecedence>335</renderPrecedence>
+        <pathCost>2</pathCost>
+        <statBases>
+            <WorkToBuild>150</WorkToBuild>
+            <Beauty>-1</Beauty>
+            <Cleanliness>-1</Cleanliness>
+        </statBases>
+        <affordances>
+            <li>Light</li>
+            <li>Heavy</li>
+            <li>GrowSoil</li>
+            <li>Diggable</li>
+        </affordances>
+        <terrainFilthDef>FilthDirt</terrainFilthDef>
+        <fertility>5.0</fertility>
+        <takeFootprints>True</takeFootprints>
+        <constructEffect>ConstructDirt</constructEffect>
+        <designationCategory>Floors</designationCategory>
+        <costList>
+            <Mulch>100</Mulch>
+            <UraniumBar>1</UraniumBar>
+            <Jade>10</Jade>
+            <Biomatter>1000</Biomatter>
+        </costList>
+        <researchPrerequisites>
+            <li>MoisturePump</li>
+        </researchPrerequisites>
+    </TerrainDef>
+
+    <!-- ================= Wood floor ================= -->
+    <TerrainDef ParentName="FloorBase">
+        <defName>WoodPlankFloor</defName>
+        <label>Rough wood floor</label>
+        <renderPrecedence>250</renderPrecedence>
+        <description>Rough wood floor. At least you're not walking on dirt.\nBeauty: 0</description>
+        <texturePath>Terrain/Surfaces/WoodFloor2</texturePath>
+        <burnedDef>BurnedWoodPlankFloor</burnedDef>
+        <color>(108,78,55)</color>
+        <statBases>
+            <WorkToBuild>85</WorkToBuild>
+            <Flammability>0.22</Flammability>
+        </statBases>
+        <pathCost>10</pathCost>
+        <costList>
+            <WoodLog>3</WoodLog>
+        </costList>
+        <constructEffect>ConstructWood</constructEffect>
+        <designationHotKey>Misc7</designationHotKey>
+        <constructionSkillPrerequisite>1</constructionSkillPrerequisite>
+    </TerrainDef>
+    
+    <TerrainDef ParentName="FloorBase">
+        <defName>WoodPlankFloor2</defName>
+        <label>wood plank floor</label>
+        <renderPrecedence>250</renderPrecedence>
+        <description>Wood plank flooring. For that warm, homey feeling.\nBeauty: 3</description>
+        <texturePath>Terrain/Surfaces/WoodFloor</texturePath>
+        <burnedDef>BurnedWoodPlankFloor</burnedDef>
+        <color>(108,78,55)</color>
+        <statBases>
+            <Beauty>3</Beauty>
+            <WorkToBuild>200</WorkToBuild>
+            <Flammability>0.22</Flammability>
+        </statBases>
+        <costList>
+            <WoodPlank>25</WoodPlank>
+        </costList>
+        <constructEffect>ConstructWood</constructEffect>
+        <designationHotKey>Misc7</designationHotKey>
+        <researchPrerequisites>
+            <li>Woodwork</li>
+        </researchPrerequisites>
+        <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+    </TerrainDef>
+    <TerrainDef ParentName="FloorBase">
+        <defName>WoodPlankFloor3</defName>
+        <label>carved oak floor</label>
+        <renderPrecedence>250</renderPrecedence>
+        <description>Carved oak flooring for the stylish colonist.\nBeauty: 6</description>
+        <texturePath>Terrain/Surfaces/WoodFloor3</texturePath>
+        <burnedDef>BurnedWoodPlankFloor</burnedDef>
+        <color>(108,78,55)</color>
+        <statBases>
+            <Beauty>6</Beauty>
+            <WorkToBuild>400</WorkToBuild>
+            <Flammability>0.22</Flammability>
+        </statBases>
+        <costList>
+            <WoodPlank>50</WoodPlank>
+        </costList>
+        <constructEffect>ConstructWood</constructEffect>
+        <designationHotKey>Misc7</designationHotKey>
+        <researchPrerequisites>
+            <li>Woodwork</li>
+        </researchPrerequisites>
+        <constructionSkillPrerequisite>15</constructionSkillPrerequisite>
+    </TerrainDef>
+</Defs>

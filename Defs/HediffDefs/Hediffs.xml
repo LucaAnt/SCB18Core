@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- HediffDef Misc -->
+	<HediffDef Name="PositiveStatusEffectBase" Abstract="True">
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.7, 1.0, 0.7)</defaultLabelColor>
+	</HediffDef>
+	
+	
+	<HediffDef ParentName="PositiveStatusEffectBase">
+		<defName>LightImmuneBoost</defName>
+		<label>Healthy Diet</label>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>
+					<min>5000</min>
+					<max>10000</max>
+				</disappearsAfterTicks>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>+0.10</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="PositiveStatusEffectBase">
+		<defName>MediumImmuneBoost</defName>
+		<label>Immunostimulant herbs</label>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>
+					<min>5000</min>
+					<max>5000</max>
+				</disappearsAfterTicks>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>+0.50</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<!-- Gold Advanced Bionics -->
+	<!-- <defaultLabelColor>(255,215,0)</defaultLabelColor> -->
+	
+	<!-- Bright Purple Bionic-->
+	<!-- <defaultLabelColor>(220,30,220)</defaultLabelColor> -->
+
+	<!-- Azure Advanced Simple -->
+	<!-- <defaultLabelColor>(30,160,220)</defaultLabelColor> -->
+	
+	<!-- Orange Simple -->
+	<!-- <defaultLabelColor>(255,69,0)</defaultLabelColor> -->
+	
+	<!-- Red Primitive -->
+	<!-- <defaultLabelColor>(139,0,0)</defaultLabelColor> -->
+	
+	<!-- Artificial body parts - simple -->
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>SteelDenture</defName>
+		<defaultLabelColor>(255,69,0)</defaultLabelColor>
+		<label>steel denture</label>
+		<labelNoun>a steel denture</labelNoun>
+		<spawnThingOnRemoved>SteelDenture</spawnThingOnRemoved>
+		<addedPartProps>
+			<isSolid>true</isSolid>
+			<partEfficiency>1.1</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+	<!-- Artificial body parts - advanced -->
+	
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>AdvancedProstheticArm</defName>
+		<defaultLabelColor>(30,160,220)</defaultLabelColor>
+		<label>advanced prosthetic arm</label>
+		<labelNoun>a advanced prosthetic arm</labelNoun>
+		<spawnThingOnRemoved>AdvancedProstheticArm</spawnThingOnRemoved>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>fist</label>
+            <capacities>
+              <li>Blunt</li>
+            </capacities>
+            <power>8</power>
+            <cooldownTime>1.65</cooldownTime>
+          </li>
+        </tools>
+      </li>
+		</comps>
+		<addedPartProps>
+			<isSolid>true</isSolid>
+			<partEfficiency>0.9</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+	
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>AdvancedProstheticLeg</defName>
+		<defaultLabelColor>(30,160,220)</defaultLabelColor>
+		<label>advanced prosthetic leg</label>
+		<labelNoun>a advanced prosthetic leg</labelNoun>
+		<spawnThingOnRemoved>AdvancedProstheticLeg</spawnThingOnRemoved>
+		<addedPartProps>
+			<isSolid>true</isSolid>
+			<partEfficiency>0.9</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+	
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>PlasteelDenture</defName>
+		<defaultLabelColor>(30,160,220)</defaultLabelColor>
+		<label>plasteel denture</label>
+		<labelNoun>a plasteel denture</labelNoun>
+		<spawnThingOnRemoved>PlasteelDenture</spawnThingOnRemoved>
+		<addedPartProps>
+			<isSolid>true</isSolid>
+			<partEfficiency>1.2</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+	
+	<!-- Artificial body parts - bionics -->
+
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>BionicEar</defName>
+		<label>bionic ear</label>
+		<labelNoun>a bionic ear</labelNoun>
+		<spawnThingOnRemoved>BionicEar</spawnThingOnRemoved>
+		<addedPartProps>
+			<isBionic>true</isBionic>
+			<isSolid>true</isSolid>
+			<partEfficiency>1.4</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>BionicSpine</defName>
+		<label>bionic spine</label>
+		<labelNoun>a bionic spine</labelNoun>
+		<spawnThingOnRemoved>BionicSpine</spawnThingOnRemoved>
+		<addedPartProps>
+			<isBionic>true</isBionic>
+			<isSolid>true</isSolid>
+			<partEfficiency>1.4</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+	
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>BionicBrain</defName>
+		<label>positronic brain implant</label>
+		<labelNoun>a positronic brain implant</labelNoun>
+		<spawnThingOnRemoved>BionicBrain</spawnThingOnRemoved>
+		<addedPartProps>
+			<isBionic>true</isBionic>
+			<isSolid>true</isSolid>
+			<partEfficiency>1.4</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+
+</Defs>

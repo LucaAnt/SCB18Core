@@ -1,0 +1,5 @@
+C:\Users\pesky\Desktop\RimWorld\Mods\SCA11Core\Assemblies\SuperiorCrafting.dll
+C:\Users\pesky\Documents\SharpDevelop Projects\SuperiorCrafting\SuperiorCrafting\obj\Debug\SuperiorCrafting.csprojResolveAssemblyReference.cache
+C:\Users\pesky\Documents\SharpDevelop Projects\SuperiorCrafting\SuperiorCrafting\obj\Debug\SuperiorCrafting.dll
+C:\Users\pesky\Desktop\RimWorld\Mods\SCB18Core\Assemblies\SuperiorCrafting.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\SCB18Core\Assemblies\SuperiorCrafting.dll

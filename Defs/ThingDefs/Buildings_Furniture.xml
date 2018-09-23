@@ -1,0 +1,688 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--===============Raw Furniture====================-->
+	
+	
+	<ThingDef Abstract="True" ParentName="FurnitureWithQualityBase" Name="SCStompTableBase">
+		<thingClass>Building</thingClass>
+		<altitudeLayer>Building</altitudeLayer>
+		<description>People eat off tables when chairs are placed facing them.</description>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>false</castEdgeShadows>
+		<pathCost>60</pathCost>
+		<fillPercent>0.5</fillPercent>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<canOverlapZones>false</canOverlapZones>
+		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		<surfaceType>Eat</surfaceType>
+		<comps>
+			<li Class="CompProperties_RoomIdentifier">
+				<roomStat>Impressiveness</roomStat>
+			</li>
+			<li>
+				<compClass>CompGatherSpot</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="SCStompTableBase">
+		<defName>SC_Stomp_Table</defName>
+		<label>Tree stump table</label>
+		<description>A raw improvised table made off tree stump</description>
+		<graphicData>
+			<texPath>Things/Building/SCFurniture/Tables/TreeStompTable</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shadowData>
+				<volume>(0.5, 0.7, 0.5)</volume>
+			</shadowData>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToBuild>250</WorkToBuild>
+			<Mass>15</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>0.1</Beauty>
+		</statBases>
+		<costList>
+			<WoodLog>30</WoodLog>
+		</costList>
+		<rotatable>false</rotatable>
+		<size>(1,1)</size>
+		<pathCost>50</pathCost>
+		<fillPercent>0.50</fillPercent>
+	</ThingDef>
+	
+
+	<ThingDef ParentName="FurnitureWithQualityBase">
+		<defName>SC_Stomp_Stool</defName>
+		<label>tree stump stool</label>
+		<graphicData>
+			<texPath>Things/Building/SCFurniture/Chairs/TreeStompStool</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shadowData>
+				<volume>(0.3, 0.6, 0.3)</volume>
+			</shadowData>
+			<damageData>
+				<rectN>(0.125,0.296875,0.734375,0.421875)</rectN>
+				<rectS>(0.125,0.296875,0.734375,0.421875)</rectS>
+				<rectE>(0.234375,0.296875,0.5,0.546875)</rectE>
+				<rectW>(0.234375,0.296875,0.5,0.546875)</rectW>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<statBases>
+			<MaxHitPoints>75</MaxHitPoints>
+			<WorkToBuild>50</WorkToBuild>
+			<Mass>5</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>0</Beauty>
+			<Comfort>0.1</Comfort>
+		</statBases>
+		<description>A raw wooden stool on which to sit.</description>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<costList>
+			<WoodLog>5</WoodLog>
+		</costList>
+		<pathCost>30</pathCost>
+		<fillPercent>0.20</fillPercent>
+		<building>
+			<isSittable>true</isSittable>
+		</building>
+	</ThingDef>
+	
+	<!--=============== Furniture	====================-->
+	
+	<ThingDef ParentName="TableGatherSpotBase">
+		<defName>TableShort</defName>
+		<label>draggable table</label>
+		<graphicData>
+			<texPath>Things/Building/SCFurniture/Tables/Table_Atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Custom3</li>
+			</linkFlags>
+		</graphicData>
+		<blueprintGraphicData>
+			<texPath>Things/Building/Linked/Sandbags_Blueprint_Atlas</texPath>
+		</blueprintGraphicData>
+		<uiIconPath>Things/Building/SCFurniture/Tables/Table_Icon</uiIconPath>
+		<description>A dragable table. A place for your colonists to sit and eat.</description>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<surfaceType>Eat</surfaceType>
+		<statBases>
+			<MaxHitPoints>40</MaxHitPoints>
+			<WorkToBuild>500</WorkToBuild>
+			<Flammability>1.0</Flammability>
+			<Beauty>6</Beauty>
+		</statBases>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>20</costStuffCount>
+		<rotatable>false</rotatable>
+		<passability>PassThroughOnly</passability>
+		<pathCost>60</pathCost>
+		<fillPercent>0.4</fillPercent>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<designationCategory>Furniture</designationCategory>
+		<comps>
+			<li>
+				<compClass>CompGatherSpot</compClass>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>FurnitureII</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="ArtableBedBase">
+		<defName>ComfyBed</defName>
+		<label>comfy bed</label>
+		<description>A cozy mattress and sheets on a metal frame for resting. Rest effectiveness:110%</description>
+		<graphicData>
+			<texPath>Things/Building/SCFurniture/Beds/ComfyBed</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(3,4)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>120</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Beauty>16</Beauty>
+			<WorkToBuild>1500</WorkToBuild>
+			<Comfort>0.85</Comfort>
+			<BedRestEffectiveness>1.10</BedRestEffectiveness>
+		</statBases>
+		<size>(1,2)</size>
+		<costList>
+			<Cloth>20</Cloth>
+		</costList>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+		</stuffCategories>
+		<costStuffCount>40</costStuffCount>
+		<building>
+			<bed_showSleeperBody>False</bed_showSleeperBody>
+			<bed_healPerDay>4</bed_healPerDay>
+		</building>
+		<fillPercent>0.4</fillPercent>
+		<pathCost>60</pathCost>
+		<staticSunShadowHeight>0.17</staticSunShadowHeight>
+		<castEdgeShadows>True</castEdgeShadows>
+		<designationCategory>Furniture</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<researchPrerequisites>
+			<li>FurnitureII</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+
+	<ThingDef ParentName="ArtableBedBase">
+		<defName>PodBed</defName>
+		<label>pod bed</label>
+		<description>A futuristic bed with a high beauty rating. Built to provide the maximum comfort level. Rest effectiveness: 125%</description>
+		<graphicData>
+			<texPath>Things/Building/SCFurniture/Beds/PodBed</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(3,4)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Beauty>20</Beauty>
+			<WorkToBuild>2500</WorkToBuild>
+			<Comfort>0.95</Comfort>
+			<BedRestEffectiveness>1.25</BedRestEffectiveness>
+		</statBases>
+		<size>(1,2)</size>
+		<costList>
+			<PlasteelBar>60</PlasteelBar>
+			<Cloth>40</Cloth>
+		</costList>
+		<building>
+			<bed_showSleeperBody>False</bed_showSleeperBody>
+			<bed_healPerDay>5</bed_healPerDay>
+		</building>
+		<fillPercent>0.4</fillPercent>
+		<pathCost>60</pathCost>
+		<staticSunShadowHeight>0.17</staticSunShadowHeight>
+		<castEdgeShadows>True</castEdgeShadows>
+		<designationCategory>Furniture</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<researchPrerequisites>
+			<li>FurnitureIII</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+
+	<ThingDef ParentName="BedWithQualityBase">
+		<defName>AdvHospitalBed</defName>
+		<label>advanced medical bed</label>
+		<description>A healing pod, equipped with advanced medical utilities perfect for healing up wounded colonists and prisoners. Not very comfortable, but heals very fast!</description>
+		<graphicData>
+			<texPath>Things/Building/SCFurniture/Beds/MedBed</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(3,4)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToBuild>2850</WorkToBuild>
+			<Mass>45</Mass>
+			<Flammability>1.0</Flammability>
+			<BedRestEffectiveness>1</BedRestEffectiveness>
+			<Comfort>0.50</Comfort>
+			<ImmunityGainSpeedFactor>2.144</ImmunityGainSpeedFactor>
+			<MedicalTendQualityOffset>0.50</MedicalTendQualityOffset>
+			<SurgerySuccessChanceFactor>2.1</SurgerySuccessChanceFactor>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>VitalsMonitor</li>
+				</linkableFacilities>
+			</li>
+		</comps>
+		<size>(1,2)</size>
+		<costList>
+			<PlasteelBar>100</PlasteelBar>
+			<Cloth>40</Cloth>
+			<GlitterworldMedicine>10</GlitterworldMedicine>
+		</costList>
+		<building>
+			<bed_showSleeperBody>False</bed_showSleeperBody>
+			<bed_healPerDay>10</bed_healPerDay>
+			<bed_defaultMedical>true</bed_defaultMedical>
+		</building>
+		<fillPercent>0.4</fillPercent>
+		<pathCost>60</pathCost>
+		<leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
+		<staticSunShadowHeight>0.17</staticSunShadowHeight>
+		<castEdgeShadows>True</castEdgeShadows>
+		<designationHotKey>Misc5</designationHotKey>
+		<researchPrerequisites>
+			<li>MedicineIV</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<techLevel>Spacer</techLevel>
+	</ThingDef>
+
+	<ThingDef ParentName="ArtableFurnitureBase">
+		<defName>ComfyChair</defName>
+		<label>Comfy Chair</label>
+		<graphicData>
+			<texPath>Things/Building/SCFurniture/Chairs/ComfyChair</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shadowData>
+				<volume>(0.3, 0.6, 0.3)</volume>
+			</shadowData>
+			<damageData>
+				<rectN>(0.25,0.234375,0.5,0.28125)</rectN>
+				<rectS>(0.25,0.234375,0.5,0.28125)</rectS>
+				<rectE>(0.28125,0.25,0.453125,0.25)</rectE>
+				<rectW>(0.28125,0.25,0.453125,0.25)</rectW>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<statBases>
+			<MaxHitPoints>170</MaxHitPoints>
+			<WorkToBuild>6000</WorkToBuild>
+			<Mass>7</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>8</Beauty>
+			<Comfort>0.70</Comfort>
+		</statBases>
+		<description>A comfy chair people can sit on.</description>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+		</stuffCategories>
+		<costList>
+			<Cloth>25</Cloth>
+		</costList>
+		<costStuffCount>60</costStuffCount>
+		<pathCost>30</pathCost>
+		<designationHotKey>Misc7</designationHotKey>
+		<fillPercent>0.35</fillPercent>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<building>
+			<isSittable>true</isSittable>
+		</building>
+		<researchPrerequisites>
+			<li>FurnitureII</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="ArtableFurnitureBase">
+		<defName>PodChair</defName>
+		<label>Pod Chair</label>
+		<graphicData>
+			<texPath>Things/Building/SCFurniture/Chairs/PodChair</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shadowData>
+				<volume>(0.3, 0.6, 0.3)</volume>
+			</shadowData>
+			<damageData>
+				<rectN>(0.25,0.234375,0.5,0.28125)</rectN>
+				<rectS>(0.25,0.234375,0.5,0.28125)</rectS>
+				<rectE>(0.28125,0.25,0.453125,0.25)</rectE>
+				<rectW>(0.28125,0.25,0.453125,0.25)</rectW>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<statBases>
+			<MaxHitPoints>170</MaxHitPoints>
+			<WorkToBuild>6000</WorkToBuild>
+			<Mass>10</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>12</Beauty>
+			<Comfort>1.00</Comfort>
+		</statBases>
+		<description>A futuristic chair people can sit on.</description>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costList>
+			<Cloth>50</Cloth>
+		</costList>
+		<costStuffCount>60</costStuffCount>
+		<pathCost>30</pathCost>
+		<designationHotKey>Misc7</designationHotKey>
+		<fillPercent>0.35</fillPercent>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<building>
+			<isSittable>true</isSittable>
+		</building>
+		<researchPrerequisites>
+			<li>FurnitureIII</li>
+		</researchPrerequisites>
+	</ThingDef>
+	<!--=============== ceilings	====================-->
+	
+	<ThingDef Abstract="True" Name="CeilingBase" ParentName="BuildingBase">
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<minifiedDef>MinifiedFurniture</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<selectable>true</selectable>
+		<fillPercent>0.20</fillPercent>
+		<pathCost>8</pathCost>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+		<designationCategory>Furniture</designationCategory>
+		<rotatable>false</rotatable>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shadowData>
+				<volume>(0.3, 0.6, 0.3)</volume>
+				<offset>(0,0,-0.1)</offset>
+			</shadowData>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+		</graphicData>
+		<costList>
+			<Glass>15</Glass>
+			<SteelBar>2</SteelBar>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>75</basePowerConsumption>
+				<shortCircuitInRain>false</shortCircuitInRain>
+			</li>
+		</comps>
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<WorkToBuild>170</WorkToBuild>
+			<Flammability>1.0</Flammability>
+			<Mass>4</Mass>
+		</statBases>
+		<researchPrerequisites>
+			<li>ColoredLights</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="CeilingBase">
+		<defName>Ceilinglamp</defName>
+		<label>Ceiling lamp</label>
+		<description>Indoor ceiling lamp that lights an area.</description>
+		<graphicData>
+			<texPath>Things/Building/SCFurniture/Lights/CeilingLamp</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<shadowData>
+				<volume>(0.3, 0.6, 0.3)</volume>
+				<offset>(0,0,-0.1)</offset>
+			</shadowData>
+		</graphicData>
+		<passability>Standable</passability>
+		<designationHotKey>Misc11</designationHotKey>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>15</glowRadius>
+				<glowColor>(217,217,208,0)</glowColor>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="CeilingBase">
+		<defName>Ceilinglamp_Red</defName>
+		<label>Ceiling lamp (red)</label>
+		<graphicData>
+			<texPath>Things/Building/SCFurniture/Lights/CeilingLamp_Red</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<shadowData>
+				<volume>(0.3, 0.6, 0.3)</volume>
+				<offset>(0,0,-0.1)</offset>
+			</shadowData>
+		</graphicData>
+		<passability>Standable</passability>
+		<description>Indoor ceiling lamp that lights an area.</description>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>15</glowRadius>
+				<glowColor>(217,0,0,0)</glowColor>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="CeilingBase">
+		<defName>Ceilinglamp_Green</defName>
+		<label>Ceiling lamp (green)</label>
+		<graphicData>
+			<texPath>Things/Building/SCFurniture/Lights/CeilingLamp_Green</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<shadowData>
+				<volume>(0.3, 0.6, 0.3)</volume>
+				<offset>(0,0,-0.1)</offset>
+			</shadowData>
+		</graphicData>
+		<passability>Standable</passability>
+		<description>Indoor ceiling lamp that lights an area.</description>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>15</glowRadius>
+				<glowColor>(0,217,0,0)</glowColor>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="CeilingBase">
+		<defName>Ceilinglamp_Blue</defName>
+		<label>Ceiling lamp (blue)</label>
+		<description>Indoor ceiling lamp that lights an area.</description>
+		<graphicData>
+			<texPath>Things/Building/SCFurniture/Lights/CeilingLamp_Blue</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<shadowData>
+				<volume>(0.3, 0.6, 0.3)</volume>
+				<offset>(0,0,-0.1)</offset>
+			</shadowData>
+		</graphicData>
+		<passability>Standable</passability>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>15</glowRadius>
+				<glowColor>(0,0,217,0)</glowColor>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<!--=============== Spacer Furniture	====================-->
+	<ThingDef ParentName="BuildingBase">
+		<defName>SpaceshipCabinet</defName>
+		<label>Spacehip Cabinet</label>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/SCDecor/Cabinet</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.5</fillPercent>
+		<costList>
+			<PlasteelBar>50</PlasteelBar>
+		</costList>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToBuild>1250</WorkToBuild>
+			<Beauty>10</Beauty>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<description>A spacer cabinet.</description>
+		<size>(1,1)</size>
+		<designationCategory>Furniture</designationCategory>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<rotatable>true</rotatable>
+		<researchPrerequisites>
+			<li>FurnitureIII</li>
+		</researchPrerequisites>
+		<comps>
+			<li Class="CompProperties_Facility">
+				<statOffsets>
+					<Comfort>0.20</Comfort>
+					<BedRestEffectiveness>0.20</BedRestEffectiveness>
+				</statOffsets>
+				<maxSimultaneous>1</maxSimultaneous>
+				<maxDistance>3</maxDistance>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+	</ThingDef>
+
+	<ThingDef ParentName="ArtableFurnitureBase">
+		<defName>SpaceshipDesk</defName>
+		<label>Spaceship Desk</label>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/SCDecor/Desk</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,1)</drawSize>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.5</fillPercent>
+		<costList>
+			<PlasteelBar>75</PlasteelBar>
+		</costList>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToBuild>1875</WorkToBuild>
+			<Beauty>15</Beauty>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<description>A spacer desk.</description>
+		<size>(2,1)</size>
+		<designationCategory>Furniture</designationCategory>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<rotatable>true</rotatable>
+		<researchPrerequisites>
+			<li>FurnitureIII</li>
+		</researchPrerequisites>
+		<comps>
+			<li Class="CompProperties_Facility">
+				<statOffsets>
+					<Comfort>0.20</Comfort>
+					<BedRestEffectiveness>0.20</BedRestEffectiveness>
+				</statOffsets>
+				<maxSimultaneous>1</maxSimultaneous>
+				<maxDistance>3</maxDistance>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+	</ThingDef>
+
+	<ThingDef ParentName="ArtableFurnitureBase">
+		<defName>SpaceshipLocker</defName>
+		<label>Spaceship Locker</label>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/SCDecor/Locker</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.5</fillPercent>
+		<costList>
+			<PlasteelBar>50</PlasteelBar>
+		</costList>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToBuild>1250</WorkToBuild>
+			<Beauty>10</Beauty>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<description>A spacer locker.</description>
+		<size>(1,1)</size>
+		<designationCategory>Furniture</designationCategory>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<rotatable>true</rotatable>
+		<researchPrerequisites>
+			<li>FurnitureIII</li>
+		</researchPrerequisites>
+		<comps>
+			<li Class="CompProperties_Facility">
+				<statOffsets>
+					<Comfort>0.20</Comfort>
+					<BedRestEffectiveness>0.20</BedRestEffectiveness>
+				</statOffsets>
+				<maxSimultaneous>1</maxSimultaneous>
+				<maxDistance>3</maxDistance>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+	</ThingDef>
+
+	<ThingDef ParentName="ArtableFurnitureBase">
+		<defName>SpaceshipShelf</defName>
+		<label>Spaceship Shelf</label>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/SCDecor/Shelf</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.5</fillPercent>
+		<costList>
+			<PlasteelBar>50</PlasteelBar>
+		</costList>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToBuild>1250</WorkToBuild>
+			<Beauty>10</Beauty>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<description>A spacer shelf.</description>
+		<size>(1,1)</size>
+		<designationCategory>Furniture</designationCategory>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<rotatable>true</rotatable>
+		<researchPrerequisites>
+			<li>FurnitureIII</li>
+		</researchPrerequisites>
+		<comps>
+			<li Class="CompProperties_Facility">
+				<statOffsets>
+					<Comfort>0.20</Comfort>
+					<BedRestEffectiveness>0.20</BedRestEffectiveness>
+				</statOffsets>
+				<maxSimultaneous>1</maxSimultaneous>
+				<maxDistance>3</maxDistance>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+	</ThingDef>
+
+</Defs>

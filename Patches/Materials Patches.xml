@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <!--============================== Basic Resources ==============================-->
+    <Operation Class="PatchOperationRemove">
+        <xpath>*/ThingDef[defName="Steel"]/stuffProps/categories |
+            */ThingDef[defName="Plasteel"]/stuffProps/categories |
+            */ThingDef[defName="Gold"]/stuffProps/categories |
+            */ThingDef[defName="Silver"]/stuffProps/categories |
+            */ThingDef[defName="Uranium"]/stuffProps/categories |
+            */ThingDef[defName="WoodLog"]/stuffProps/categories |
+            */ThingDef[defName="Jade"]/stuffProps/categories
+        </xpath>
+    </Operation>
+    
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[@Name="ChunkRockBase"]</xpath>
+        <value>
+            <stuffProps>
+                <categories>
+                    <li>RawStoneChunk</li>
+                </categories>
+                <statOffsets>
+                    <WorkToBuild>10</WorkToBuild>
+                </statOffsets>
+                <statFactors>
+                    <Flammability>0</Flammability>
+                    <WorkToBuild>6.0</WorkToBuild>
+                    <WorkToMake>1.3</WorkToMake>
+                    <DoorOpenSpeed>0.45</DoorOpenSpeed>
+                    <BedRestEffectiveness>0.9</BedRestEffectiveness>
+                    <MeleeWeapon_CooldownMultiplier>1.35</MeleeWeapon_CooldownMultiplier>
+                </statFactors>
+            </stuffProps>
+        </value>
+    </Operation>
+    <!--============================== Appareal and Weapons Recipes materials ==============================-->
+    <!--============================== Armors ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Apparel_AdvancedHelmet"]/costList</xpath>
+        <value>
+            <costList>
+                <Component>2</Component>
+                <PlasteelBar>5</PlasteelBar>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Apparel_PowerArmorHelmet"]/costList</xpath>
+        <value>
+            <costList>
+                <Component>7</Component>
+                <PlasteelBar>60</PlasteelBar>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Apparel_VestPlate"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>35</SteelBar>
+                <Component>2</Component>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Apparel_PowerArmor"]/costList</xpath>
+        <value>
+            <costList>
+                <Component>18</Component>
+                <PlasteelBar>135</PlasteelBar>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Apparel_ShieldBelt"]/costList</xpath>
+        <value>
+            <costList>
+                <Component>6</Component>
+                <PlasteelBar>50</PlasteelBar>
+                <UraniumBar>1</UraniumBar>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Apparel_SmokepopBelt"]/costList</xpath>
+        <value>
+            <costList>
+                <Chemfuel>5</Chemfuel>
+                <Component>1</Component>
+                <SteelBar>25</SteelBar>
+            </costList>
+        </value>
+    </Operation>
+    <!--============================== Weapons ==============================-->
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Gun_Revolver"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>5</SteelBar>
+                <Component>2</Component>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Gun_Autopistol"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>5</SteelBar>
+                <Component>5</Component>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Gun_IncendiaryLauncher"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>75</SteelBar>
+                <Component>4</Component>
+                <Chemfuel>25</Chemfuel>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Gun_PumpShotgun"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>25</SteelBar>
+                <Component>5</Component>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Gun_ChainShotgun"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>35</SteelBar>
+                <Component>10</Component>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Gun_BoltActionRifle"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>25</SteelBar>
+                <Component>3</Component>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Gun_MachinePistol"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>25</SteelBar>
+                <Component>6</Component>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Gun_HeavySMG"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>30</SteelBar>
+                <Component>8</Component>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Gun_LMG"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>75</SteelBar>
+                <Component>6</Component>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Gun_AssaultRifle"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>60</SteelBar>
+                <Component>7</Component>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Gun_ChargeRifle"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>20</SteelBar>
+                <PlasteelBar>30</PlasteelBar>
+                <Component>10</Component>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Gun_SniperRifle"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>60</SteelBar>
+                <Component>8</Component>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Gun_Minigun"]/costList</xpath>
+        <value>
+            <costList>
+                <SteelBar>150</SteelBar>
+                <Component>20</Component>
+            </costList>
+        </value>
+    </Operation>
+
+    <!--============================== Rocket launchers ==============================-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName="Gun_TripleRocket"]</xpath>
+        <value>
+            <costList>
+                <SteelBar>190</SteelBar>
+                <Component>8</Component>
+                <Chemfuel>10</Chemfuel>
+                <Shell_HighExplosive>3</Shell_HighExplosive>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName="Gun_DoomsdayRocket"]</xpath>
+        <value>
+            <costList>
+                <SteelBar>170</SteelBar>
+                <Component>8</Component>
+                <Chemfuel>50</Chemfuel>
+                <Shell_HighExplosive>5</Shell_HighExplosive>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAttributeSet">
+        <xpath>*/ThingDef[defName="Gun_TripleRocket"] |*/ThingDef[defName="Gun_DoomsdayRocket"]</xpath>
+        <attribute>ParentName</attribute>
+        <value>BaseHumanMakeableGun</value>
+    </Operation>
+    
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName="Gun_TripleRocket"]/statBases |*/ThingDef[defName="Gun_DoomsdayRocket"]/statBases</xpath>
+        <value>
+            <WorkToMake>10000</WorkToMake>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName="Gun_TripleRocket"] |*/ThingDef[defName="Gun_DoomsdayRocket"]</xpath>
+        <value>
+            <recipeMaker>
+                <researchPrerequisite>AdvancedRocketry</researchPrerequisite>
+            </recipeMaker>
+        </value>
+    </Operation>
+
+    <!--============================== Mortar Shells ==============================-->
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Shell_HighExplosive"]/costList/Steel |*/ThingDef[defName="Shell_Incendiary"]/costList/Steel | */ThingDef[defName="Shell_EMP"]/costList/Steel | */ThingDef[defName="Shell_Firefoam"]/costList/Steel</xpath>
+        <value>
+                <SteelBar>5</SteelBar>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationAttributeSet">
+        <xpath>*/ThingDef[defName="Shell_AntigrainWarhead"]</xpath>
+        <attribute>ParentName</attribute>
+        <value>MakeableShellBase</value>
+    </Operation>
+    
+    
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName="Shell_AntigrainWarhead"]</xpath>
+        <value>
+            <recipeMaker>
+                <researchPrerequisite>AdvancedRocketry</researchPrerequisite>
+            </recipeMaker>
+        </value>
+    </Operation>
+    
+    
+    <Operation Class="PatchOperationAdd">
+        <xpath>*/ThingDef[defName="Shell_AntigrainWarhead"]</xpath>
+        <value>
+            <costList>
+                <SteelBar>5</SteelBar>
+                <Component>1</Component>
+                <Chemfuel>10</Chemfuel>
+                <Uranium>1</Uranium>
+            </costList>
+        </value>
+    </Operation>
+    
+</Patch>

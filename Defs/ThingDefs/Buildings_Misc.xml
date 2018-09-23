@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--=============== Training Devices ===============-->
+  <ThingDef Name="TrainingDummyBase" Abstract="True" ParentName="BuildingBase">
+    <thingClass>SuperiorCrafting.Building_Trainable</thingClass>
+      <altitudeLayer>Building</altitudeLayer>
+      <hasInteractionCell>true</hasInteractionCell>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToMake>2250</WorkToMake>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <passability>Impassable</passability>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.2</fillPercent>
+    <tickerType>Normal</tickerType>
+    <inspectorTabs>
+      <li>SuperiorCrafting.ITabs.ITab_Training_Dummy</li>
+    </inspectorTabs>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <pathCost>30</pathCost>
+    <designationCategory>Misc</designationCategory>
+    <rotatable>true</rotatable>
+  </ThingDef>
+  
+  <ThingDef ParentName="TrainingDummyBase">
+    <defName>Holodeck</defName>
+    <label>Holosuite</label>
+    <graphicData>
+      <texPath>Things/Building/SCMisc/Holodeck</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,2)</drawSize>
+    </graphicData>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <description>A man-able holosuite your colonists can use to practice their social skills with.</description>
+    <size>(1,2)</size>
+    <costList>
+      <SteelBar>60</SteelBar>
+      <Glass>30</Glass>
+      <Electronics>10</Electronics>
+      <Component>3</Component>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <startElectricalFires>true</startElectricalFires>
+        <basePowerConsumption>100</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+    <researchPrerequisites><li>CraftingIV</li></researchPrerequisites>
+  </ThingDef>
+  
+  
+  <ThingDef ParentName="TrainingDummyBase">
+    <defName>CPRdummy</defName>
+    <label>medical dummy</label>
+    <graphicData>
+      <texPath>Things/Building/SCMisc/CPRdummy1x1</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <description>A man-able medical dummy your colonists can use to practice their medical skills with.</description>
+    <size>(1,1)</size>
+    <costList>
+      <WoodPlank>30</WoodPlank>
+      <SteelBar>60</SteelBar>
+      <Hyperweave>10</Hyperweave>
+      <Biomatter>100</Biomatter>
+    </costList>
+    <rotatable>true</rotatable>
+    <researchPrerequisites><li>Machining</li></researchPrerequisites>
+  </ThingDef>
+  
+  
+  <ThingDef ParentName="TrainingDummyBase">
+    <defName>PunchingBag</defName>
+    <label>punching bag</label>
+    <graphicData>
+      <texPath>Things/Building/SCMisc/PunchingBag1x1</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <description>A man-able punching bag your colonists can use to practice their melee skills with.</description>
+    <size>(1,1)</size>
+    <costStuffCount>70</costStuffCount>
+    <stuffCategories>
+      <li>Leathery</li>
+    </stuffCategories>
+    <costList>
+      <WoodPlank>30</WoodPlank>
+      <SteelBar>30</SteelBar>
+      <Sand>50</Sand>
+    </costList>
+    <researchPrerequisites><li>ElectricSmelting</li></researchPrerequisites>
+  </ThingDef>
+  
+  
+  <ThingDef ParentName="TrainingDummyBase">
+    <defName>ShootingRange</defName>
+    <label>shooting range</label>
+    <graphicData>
+      <texPath>Things/Building/SCMisc/ShootingRange1x6</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,6)</drawSize>
+    </graphicData>
+    <interactionCellOffset>(0,0,-3)</interactionCellOffset>
+    <description>A man-able shooting range your colonists can practice their shooting skills at.</description>
+    <size>(1,6)</size>
+    <costList>
+      <WoodPlank>30</WoodPlank>
+      <SteelBar>30</SteelBar>
+      <Sand>100</Sand>
+    </costList>
+    <researchPrerequisites><li>ElectricSmelting</li></researchPrerequisites>
+  </ThingDef>
+  
+ 
+</Defs>

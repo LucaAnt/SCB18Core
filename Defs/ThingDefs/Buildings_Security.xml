@@ -1,0 +1,1085 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="BaseBullet">
+		<defName>TrainingBullet</defName>
+		<label>Training bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<flyOverhead>false</flyOverhead>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+			<speed>55</speed>
+		</projectile>
+	</ThingDef>
+	
+	<!--========================= Artificial Marsh =============================-->
+	<TerrainDef>
+		<defName>aMarsh</defName>
+		<label>Artificial Marsh</label>
+		<description>Useful to slowdown enemies in critical areas</description>
+		<layerable>true</layerable>
+		<affordances>
+			<li>Light</li>
+		</affordances>
+		<designationCategory>Security</designationCategory>
+		<fertility>0</fertility>
+		<constructEffect>ConstructDirt</constructEffect>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<texturePath>Terrain/Surfaces/Marsh</texturePath>
+		<edgeType>FadeRough</edgeType>
+		<renderPrecedence>325</renderPrecedence>
+		<pathCost>40</pathCost>
+		<statBases>
+			<Beauty>-2</Beauty>
+			<Cleanliness>-2</Cleanliness>
+			<WorkToBuild>500</WorkToBuild>
+		</statBases>
+		<terrainFilthDef>FilthDirt</terrainFilthDef>
+		<takeFootprints>True</takeFootprints>
+		<acceptFilth>false</acceptFilth>
+		<avoidWander>true</avoidWander>
+		<driesTo>Soil</driesTo>
+		<researchPrerequisites>
+			<li>SecurityI</li>
+		</researchPrerequisites>
+	</TerrainDef>
+	<!--========================= Sandbags =============================-->
+	<ThingDef ParentName="BuildingBase">
+		<defName>Sandbags</defName>
+		<label>sandbags</label>
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Linked/Sandbags_Atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Sandbags</li>
+			</linkFlags>
+		</graphicData>
+		<blueprintGraphicData>
+			<texPath>Things/Building/Linked/Sandbags_Blueprint_Atlas</texPath>
+		</blueprintGraphicData>
+		<uiIconPath>Things/Building/Linked/Sandbags_MenuIcon</uiIconPath>
+		<altitudeLayer>Building</altitudeLayer>
+		<pathCost>40</pathCost>
+		<pathCostIgnoreRepeat>true</pathCostIgnoreRepeat>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.65</fillPercent>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>450</MaxHitPoints>
+			<Beauty>-10</Beauty>
+			<WorkToBuild>180</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<isInert>true</isInert>
+		</building>
+		<description>Cover from gunfire.</description>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<costList>
+			<Sand>5</Sand>
+		</costList>
+		<filthLeaving>SandbagRubble</filthLeaving>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<constructEffect>ConstructDirt</constructEffect>
+		<repairEffect>ConstructDirt</repairEffect>
+		<designationHotKey>Misc1</designationHotKey>
+		<researchPrerequisites>
+			<li>SecurityI</li>
+		</researchPrerequisites>
+	</ThingDef>
+  
+	<!--========================= Embrasures =============================-->
+	
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>StoneEmbrasure</defName>
+		<label>embrasure</label>
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/SCSecurity/StoneEmbrasure_Atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Custom2</li>
+			</linkFlags>
+		</graphicData>
+		<blueprintGraphicData>
+			<texPath>Things/Building/Linked/Sandbags_Blueprint_Atlas</texPath>
+		</blueprintGraphicData>
+		<uiIconPath>Things/Building/SCSecurity/StoneEmbrasure_MenuIcon</uiIconPath>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.9</fillPercent>
+		<holdsRoof>true</holdsRoof>
+		<statBases>
+			<MaxHitPoints>350</MaxHitPoints>
+			<Beauty>-10</Beauty>
+			<WorkToBuild>250</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>A stone embrasure that provides exceptional cover from gunfire.</description>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<costStuffCount>10</costStuffCount>
+	    <stuffCategories>
+			<li>Stony</li>
+		</stuffCategories>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<repairEffect>ConstructDirt</repairEffect>
+		<researchPrerequisites>
+			<li>Embrasures</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+	<!--==================== deadfall trap ======================== -->
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>TrapDeadfall</defName>
+		<label>deadfall trap</label>
+		<thingClass>Building_TrapRearmable</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Security/DeadfallArmed</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<rect>(0,0,1,0.15)</rect>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<drawerType>RealtimeOnly</drawerType>
+		<rotatable>false</rotatable>
+		<tickerType>Normal</tickerType>
+		<stealable>false</stealable>
+		<statBases>
+			<MaxHitPoints>40</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Beauty>-4</Beauty>
+			<TrapMeleeDamage>60</TrapMeleeDamage>
+			<TrapSpringChance>0.8</TrapSpringChance>
+		</statBases>
+		<description>A suspended spiked weight held up by a delicate trigger. When the victim disturbs the trigger, the weight is released and falls on his head or torso.</description>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>70</costStuffCount>
+		<designationCategory>Security</designationCategory>
+		<designationHotKey>Misc6</designationHotKey>
+		<building>
+			<isTrap>true</isTrap>
+			<trapDamageCategory>Sharp</trapDamageCategory>
+			<trapUnarmedGraphicData>
+				<texPath>Things/Building/Security/DeadfallUnarmed</texPath>
+				<graphicClass>Graphic_Single</graphicClass>
+				<shaderType>Cutout</shaderType>
+			</trapUnarmedGraphicData>
+		</building>
+		<constructionSkillPrerequisite>3</constructionSkillPrerequisite>
+		<researchPrerequisites>
+			<li>SecurityI</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<!--=============== Turrets Guns and Bullets ===============-->
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_TurretImprovised</defName>
+		<label>improvised turret bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>10</damageAmountBase>
+			<speed>70</speed>
+		</projectile>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseHumanGun">
+		<defName>Gun_TurretImprovised</defName>
+		<label>improvised turret gun</label>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/ChargeRifle</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<menuHidden>true</menuHidden>
+		<description>Jury-rigged gun attached to a turret.</description>
+		<soundInteract>InteractRifle</soundInteract>
+		<canBeSpawningInventory>false</canBeSpawningInventory>
+		<tradeability>Never</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<useHitPoints>false</useHitPoints>
+		<statBases>
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>0.64</AccuracyShort>
+			<AccuracyMedium>0.41</AccuracyMedium>
+			<AccuracyLong>0.22</AccuracyLong>
+			<RangedWeapon_Cooldown>0.66</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+		<weaponTags>
+			<li>TurretGun</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_TurretImprovised</defaultProjectile>
+				<warmupTime>1.5</warmupTime>
+				<range>25.9</range>
+				<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>GunShotA</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_TurretBasic</defName>
+		<label>improvised turret bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>7</damageAmountBase>
+			<speed>70</speed>
+		</projectile>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseHumanGun">
+		<defName>Gun_TurretBasic</defName>
+		<label>turret gun</label>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/ChargeRifle</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<menuHidden>true</menuHidden>
+		<description>Jury-rigged gun attached to a turret.</description>
+		<soundInteract>InteractRifle</soundInteract>
+		<canBeSpawningInventory>false</canBeSpawningInventory>
+		<tradeability>Never</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<useHitPoints>false</useHitPoints>
+		<statBases>
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>0.64</AccuracyShort>
+			<AccuracyMedium>0.41</AccuracyMedium>
+			<AccuracyLong>0.22</AccuracyLong>
+			<RangedWeapon_Cooldown>0.66</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+		<weaponTags>
+			<li>TurretGun</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_TurretImprovised</defaultProjectile>
+				<warmupTime>90</warmupTime>
+				<range>34.9</range>
+				<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+				<burstShotCount>3</burstShotCount>
+				<soundCast>GunShotA</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_Minigun</defName>
+		<label>minigun bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>8</damageAmountBase>
+			<speed>70</speed>
+		</projectile>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseHumanGun">
+		<defName>Gun_TurretGatling</defName>
+		<label>gatling turret gun</label>
+		<graphicData>
+			<texPath>Things/Building/SCSecurity/SentryGunGatling_Top</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<menuHidden>true</menuHidden>
+		<description>gatling gun attached to a turret.</description>
+		<soundInteract>InteractRifle</soundInteract>
+		<canBeSpawningInventory>false</canBeSpawningInventory>
+		<tradeability>Never</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<useHitPoints>false</useHitPoints>
+		<statBases>
+			<AccuracyTouch>0.50</AccuracyTouch>
+			<AccuracyShort>0.42</AccuracyShort>
+			<AccuracyMedium>0.18</AccuracyMedium>
+			<AccuracyLong>0.06</AccuracyLong>
+			<RangedWeapon_Cooldown>0.66</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+		<weaponTags>
+			<li>TurretGun</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_Minigun</defaultProjectile>
+				<warmupTime>240</warmupTime>
+				<range>32</range>
+				<ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+				<burstShotCount>15</burstShotCount>
+				<soundCast>ShotMinigun</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_PumpShotgun</defName>
+		<label>shotgun blast</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Shotgun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>20</damageAmountBase>
+			<speed>55</speed>
+		</projectile>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseHumanGun">
+		<defName>Gun_TurretShotgun</defName>
+		<label>shotgun turret gun</label>
+		<graphicData>
+			<texPath>Things/Building/SCSecurity/SentryGunShotgun_Top</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<menuHidden>true</menuHidden>
+		<description>shotgun attached to a turret.</description>
+		<soundInteract>InteractShotgun</soundInteract>
+		<canBeSpawningInventory>false</canBeSpawningInventory>
+		<tradeability>Never</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<useHitPoints>false</useHitPoints>
+		<statBases>
+			<AccuracyTouch>0.96</AccuracyTouch>
+			<AccuracyShort>0.87</AccuracyShort>
+			<AccuracyMedium>0.77</AccuracyMedium>
+			<AccuracyLong>0.64</AccuracyLong>
+			<RangedWeapon_Cooldown>0.66</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+		<weaponTags>
+			<li>TurretGun</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_PumpShotgun</defaultProjectile>
+				<warmupTime>90</warmupTime>
+				<range>16</range>
+				<soundCast>ShotShotgun</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_SniperRifle</defName>
+		<label>sniper rifle bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>40</damageAmountBase>
+			<speed>100</speed>
+		</projectile>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseHumanGun">
+		<defName>Gun_TurretSniper</defName>
+		<label>sniper turret gun</label>
+		<graphicData>
+			<texPath>Things/Building/SCSecurity/SentryGunSniper_Top</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<menuHidden>true</menuHidden>
+		<description>sniper gun attached to a turret.</description>
+		<soundInteract>InteractRifle</soundInteract>
+		<canBeSpawningInventory>false</canBeSpawningInventory>
+		<tradeability>Never</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<useHitPoints>false</useHitPoints>
+		<statBases>
+			<AccuracyTouch>0.50</AccuracyTouch>
+			<AccuracyShort>0.86</AccuracyShort>
+			<AccuracyMedium>0.86</AccuracyMedium>
+			<AccuracyLong>0.88</AccuracyLong>
+			<RangedWeapon_Cooldown>2.33</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+		<weaponTags>
+			<li>TurretGun</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_SniperRifle</defaultProjectile>
+				<warmupTime>240</warmupTime>
+				<range>45</range>
+				<soundCast>ShotSniperRifle</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<!--=============== Turrets Buildings ===============-->
+	<!--=============== Improvised turret ===============-->
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>TurretGun</defName>
+		<label>improvised turret</label>
+		<thingClass>Building_TurretGun</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Security/TurretImprovised</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+		</graphicData>
+		<minifiedDef>MinifiedFurniture</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<WorkToBuild>2500</WorkToBuild>
+			<Mass>100</Mass>
+			<Beauty>-20</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>3.9</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+				<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>350</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<description>An improvised turret that automatically fires at nearby enemies. Explodes when damaged. Its hacked-together AI brain isn't very smart, and can't be directly controlled, so beware of friendly fire.</description>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.4</fillPercent>
+		<castEdgeShadows>true</castEdgeShadows>
+		<hasTooltip>true</hasTooltip>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>75</costStuffCount>
+		<costList>
+			<SteelBar>100</SteelBar>
+			<Component>3</Component>
+			<Electronics>1</Electronics>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<specialDisplayRadius>25.9</specialDisplayRadius>
+		<building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>Gun_TurretImprovised</turretGunDef>
+			<turretBurstCooldownTime>5.15</turretBurstCooldownTime>
+			<turretTopGraphicPath>Things/Building/Security/TurretImprovised_Top</turretTopGraphicPath>
+		</building>
+		<designationHotKey>Misc2</designationHotKey>
+		<researchPrerequisites>
+			<li>GunTurrets</li>
+		</researchPrerequisites>
+	</ThingDef>
+	<!--=============== Abstract SC Turret ===============-->
+
+	
+	<ThingDef Name="SCT" ParentName="BuildingBase" Abstract="True">
+		<graphicData>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+		</graphicData>
+		<minifiedDef>MinifiedFurniture</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>true</rotatable>
+		<statBases>
+			<WorkToBuild>2500</WorkToBuild>
+			<Mass>100</Mass>
+		</statBases>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>50</costStuffCount>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>3.9</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+				<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>350</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<passability>Impassable</passability>
+	</ThingDef>
+	
+	<ThingDef Name="SCTM" ParentName="BuildingBase" Abstract="True">
+		<graphicData>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+		</graphicData>
+		<minifiedDef>MinifiedFurniture</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>true</rotatable>
+		<statBases>
+			<WorkToBuild>2500</WorkToBuild>
+			<Mass>100</Mass>
+		</statBases>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>50</costStuffCount>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Mannable">
+				<manWorkType>Violent</manWorkType>
+			</li>
+		</comps>
+		<passability>Impassable</passability>
+	</ThingDef>
+	
+		<!--=============== Manned turrets ===============-->
+	
+	
+	<ThingDef ParentName="SCTM">
+		<defName>TurretGunManned</defName>
+		<label>manned turret</label>
+		<thingClass>Building_TurretGun</thingClass>
+		<graphicData>
+			<texPath>Things/Building/SCSecurity/MannedGun_bottom</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Beauty>-60</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>A simple turret that can be manned to fire at nearby enemies. Explodes when damaged.
+Range:	 35
+Damage:   7
+Burst:	  3</description>
+		<size>(1,1)</size>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<costList>
+			<Component>5</Component>
+			<SteelBar>250</SteelBar>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<specialDisplayRadius>34.9</specialDisplayRadius>
+		<building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>Gun_TurretBasic</turretGunDef>
+			<turretBurstCooldownTime>4.0</turretBurstCooldownTime>
+			<turretTopGraphicPath>Things/Building/SCSecurity/SentryGun_Top</turretTopGraphicPath>
+		</building>
+		<researchPrerequisites>
+			<li>Mortars</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="SCTM">
+		<defName>TurretGunMannedGatling</defName>
+		<label>manned gatling turret</label>
+		<thingClass>Building_TurretGun</thingClass>
+		<graphicData>
+			<texPath>Things/Building/SCSecurity/MannedGun_bottom</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Beauty>-60</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>A gatling turret that can be manned to fire at nearby enemies. Explodes when damaged.
+Range:	 32
+Damage:   8
+Burst:	 30</description>
+		<size>(1,1)</size>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<costList>
+			<Component>5</Component>
+			<SteelBar>250</SteelBar>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<specialDisplayRadius>31.9</specialDisplayRadius>
+		<building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>Gun_TurretGatling</turretGunDef>
+			<turretBurstCooldownTime>3.0</turretBurstCooldownTime>
+			<turretTopGraphicPath>Things/Building/SCSecurity/SentryGunGatling_Top</turretTopGraphicPath>
+		</building>
+		<researchPrerequisites>
+			<li>SpecializedMannedTurrets</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="SCTM">
+		<defName>TurretGunMannedShotgun</defName>
+		<label>manned shotgun turret</label>
+		<thingClass>Building_TurretGun</thingClass>
+		<graphicData>
+			<texPath>Things/Building/SCSecurity/MannedGun_bottom</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Beauty>-60</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>A shotgun turret that can be manned to fire at nearby enemies. Explodes when damaged.
+Range:	 16
+Damage:  20
+Burst:	  1</description>
+		<size>(1,1)</size>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<costList>
+			<Component>5</Component>
+			<SteelBar>250</SteelBar>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<specialDisplayRadius>15.9</specialDisplayRadius>
+		<building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>Gun_TurretShotgun</turretGunDef>
+			<turretBurstCooldownTime>4.0</turretBurstCooldownTime>
+			<turretTopGraphicPath>Things/Building/SCSecurity/SentryGunShotgun_Top</turretTopGraphicPath>
+		</building>
+		<researchPrerequisites>
+			<li>SpecializedMannedTurrets</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="SCTM">
+		<defName>TurretGunMannedSniper</defName>
+		<label>manned sniper turret</label>
+		<thingClass>Building_TurretGun</thingClass>
+		<graphicData>
+			<texPath>Things/Building/SCSecurity/MannedGun_bottom</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Beauty>-60</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>A sniper turret that can be manned to fire at nearby enemies. Explodes when damaged.
+Range:	 45
+Damage:  40
+Burst:	  1</description>
+		<size>(1,1)</size>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<costList>
+			<Component>5</Component>
+			<SteelBar>250</SteelBar>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<specialDisplayRadius>44.9</specialDisplayRadius>
+		<building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>Gun_TurretSniper</turretGunDef>
+			<turretBurstCooldownTime>10</turretBurstCooldownTime>
+			<turretTopGraphicPath>Things/Building/SCSecurity/SentryGunSniper_Top</turretTopGraphicPath>
+		</building>
+		<researchPrerequisites>
+			<li>SpecializedMannedTurrets</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+	
+	<!--=============== AI turrets ===============-->
+  
+  
+	<ThingDef ParentName="SCT">
+		<defName>SCBasicGun</defName>
+		<label>sentry turret</label>
+		<thingClass>Building_TurretGun</thingClass>
+		<graphicData>
+			<texPath>Things/Building/SCSecurity/SentryGun_bottom</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<uiIconPath>Things/Building/SCSecurity/SentryGunIco</uiIconPath>
+		<statBases>
+			<MaxHitPoints>550</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Beauty>-60</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>A simple auto-turret that can fire at nearby enemies. Explodes when damaged.
+Range:	 35
+Damage:   7
+Burst:	  3</description>
+		<size>(1,1)</size>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<costList>
+			<Component>10</Component>
+			<SteelBar>250</SteelBar>
+			<Electronics>50</Electronics>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<specialDisplayRadius>34.9</specialDisplayRadius>
+		<building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>Gun_TurretBasic</turretGunDef>
+			<turretBurstCooldownTime>4.0</turretBurstCooldownTime>
+			<turretTopGraphicPath>Things/Building/SCSecurity/SentryGun_Top</turretTopGraphicPath>
+		</building>
+		<researchPrerequisites>
+			<li>AITurret</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="SCT">
+		<defName>TurretGunGatling</defName>
+		<label>gatling sentry turret</label>
+		<thingClass>Building_TurretGun</thingClass>
+		<graphicData>
+			<texPath>Things/Building/SCSecurity/SentryGun_bottom</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<uiIconPath>Things/Building/SCSecurity/SentryGunGatlingIco</uiIconPath>
+		<statBases>
+			<MaxHitPoints>550</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Beauty>-60</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>A gatling sentry turret that can be manned to fire at nearby enemies. Explodes when damaged.
+Range:	 32
+Damage:   8
+Burst:	 30</description>
+		<size>(1,1)</size>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<costList>
+			<Component>10</Component>
+			<SteelBar>250</SteelBar>
+			<Electronics>50</Electronics>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<specialDisplayRadius>31.9</specialDisplayRadius>
+		<building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>Gun_TurretGatling</turretGunDef>
+			<turretBurstCooldownTime>3.0</turretBurstCooldownTime>
+			<turretTopGraphicPath>Things/Building/SCSecurity/SentryGunGatling_Top</turretTopGraphicPath>
+		</building>
+		<researchPrerequisites>
+			<li>SpecializedAITurrets</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="SCT">
+		<defName>TurretGunShotgun</defName>
+		<label>shotgun sentry turret</label>
+		<thingClass>Building_TurretGun</thingClass>
+		<graphicData>
+			<texPath>Things/Building/SCSecurity/SentryGun_bottom</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<uiIconPath>Things/Building/SCSecurity/SentryGunShotgunIco</uiIconPath>
+		<statBases>
+			<MaxHitPoints>550</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Beauty>-60</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>A shotgun turret that can be manned to fire at nearby enemies. Explodes when damaged.
+Range:	 16
+Damage:  20
+Burst:	  1</description>
+		<size>(1,1)</size>
+		<passability>Impassable</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<costList>
+			<Component>10</Component>
+			<SteelBar>250</SteelBar>
+			<Electronics>50</Electronics>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<specialDisplayRadius>15.9</specialDisplayRadius>
+		<building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>Gun_TurretShotgun</turretGunDef>
+			<turretBurstCooldownTime>1.0</turretBurstCooldownTime>
+			<turretTopGraphicPath>Things/Building/SCSecurity/SentryGunShotgun_Top</turretTopGraphicPath>
+		</building>
+		<researchPrerequisites>
+			<li>SpecializedAITurrets</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="SCT">
+		<defName>TurretGunSniper</defName>
+		<label>sniper sentry turret</label>
+		<thingClass>Building_TurretGun</thingClass>
+		<graphicData>
+			<texPath>Things/Building/SCSecurity/SentryGun_bottom</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<uiIconPath>Things/Building/SCSecurity/SentryGunSniperIco</uiIconPath>
+		<statBases>
+			<MaxHitPoints>550</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Beauty>-60</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>A sniper turret that can be manned to fire at nearby enemies. Explodes when damaged.
+Range:	 45
+Damage:  40
+Burst:	  1</description>
+		<size>(1,1)</size>
+		<passability>Impassable</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<costList>
+			<Component>10</Component>
+			<SteelBar>250</SteelBar>
+			<Electronics>50</Electronics>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<specialDisplayRadius>44.9</specialDisplayRadius>
+		<building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>Gun_TurretSniper</turretGunDef>
+			<turretBurstCooldownTime>10</turretBurstCooldownTime>
+			<turretTopGraphicPath>Things/Building/SCSecurity/SentryGunSniper_Top</turretTopGraphicPath>
+		</building>
+		<researchPrerequisites>
+			<li>SpecializedAITurrets</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+	<!--=============== Jaxxa Shields ===============-->
+	
+	
+	<ThingDef Class="Enhanced_Defence.Shields.ShieldBuildingThingDef" ParentName="BuildingBase" Name="ShieldBase" Abstract="True">
+		<category>Building</category>
+		<altitudeLayer>Building</altitudeLayer>
+		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		<blockLight>true</blockLight>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<fillPercent>1</fillPercent>
+		<size>(1,1)</size>
+		<rotatable>false</rotatable>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<holdsRoof>false</holdsRoof>
+		<specialDisplayRadius>8</specialDisplayRadius>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<passability>Impassable</passability>
+		<selectable>true</selectable>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>1000</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef Class="Enhanced_Defence.Shields.ShieldBuildingThingDef" ParentName="ShieldBase">
+		<defName>Building_ShieldStandard</defName>
+		<label>sabre force shield</label>
+		<description>Creates shield field to protect important infrastructure.\nHas two main toggable functionalities:Protect from all incoming hi-velocity projectiles and suppress fire in the active area until shield charge depletion.</description>
+		<thingClass>Enhanced_Defence.Shields.Building_Shield</thingClass>
+		<graphicData>
+			<texPath>Things/ShieldBuilding_Blue</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<uiIconPath>Things/ShieldBuilding_Blue</uiIconPath>
+		<costList>
+			<SteelBar>100</SteelBar>
+			<PlasteelBar>100</PlasteelBar>
+			<Electronics>50</Electronics>
+		</costList>
+		<shieldMaxShieldStrength>2000</shieldMaxShieldStrength>
+		<shieldInitialShieldStrength>100</shieldInitialShieldStrength>
+		<shieldShieldRadius>8</shieldShieldRadius>
+		
+		<shieldPowerRequiredCharging>-1500</shieldPowerRequiredCharging>
+		<shieldPowerRequiredSustaining>-1000</shieldPowerRequiredSustaining>
+		
+		<shieldBlockIndirect>true</shieldBlockIndirect>
+		<shieldBlockDirect>true</shieldBlockDirect>
+		<shieldFireSupression>true</shieldFireSupression>
+		<shieldInterceptDropPod>false</shieldInterceptDropPod>
+		
+		<shieldStructuralIntegrityMode>false</shieldStructuralIntegrityMode>
+		
+		<shieldRechargeTickDelay>15</shieldRechargeTickDelay>
+		<shieldRecoverWarmup>900</shieldRecoverWarmup>
+		
+		<colourRed>0.0</colourRed>
+		<colourGreen>0.3764705882352941</colourGreen>
+		<colourBlue>0.7294117647058823</colourBlue>
+		<researchPrerequisites>
+			<li>SecurityIV</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+	
+	<ThingDef Class="Enhanced_Defence.Shields.ShieldBuildingThingDef" ParentName="ShieldBase">
+		<defName>Building_Shield_Fortress</defName>
+		<label>CRAM fortress shield</label>
+		<description>By refocusing the primary coil system into a vertical configuration the shields range can be extended, while lacking the flexability of the Fire Supression mode it does cover a large area and gain the ability to disrupt the avionic systems of DropPods, caulsing failure of their decent rockets and therefore a terminal velocity impact.</description>
+		<thingClass>Enhanced_Defence.Shields.Building_Shield</thingClass>
+		<graphicData>
+			<texPath>Things/ShieldBuilding_Green</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<uiIconPath>Things/ShieldBuilding_Green</uiIconPath>
+		<costList>
+			<SteelBar>250</SteelBar>
+			<PlasteelBar>250</PlasteelBar>
+			<Electronics>100</Electronics>
+		</costList>
+		<size>(2,2)</size>
+		<specialDisplayRadius>20</specialDisplayRadius>
+		
+		<shieldMaxShieldStrength>8000</shieldMaxShieldStrength>
+		<shieldInitialShieldStrength>100</shieldInitialShieldStrength>
+		<shieldShieldRadius>20</shieldShieldRadius>
+		
+		<shieldPowerRequiredCharging>-5000</shieldPowerRequiredCharging>
+		<shieldPowerRequiredSustaining>-2500</shieldPowerRequiredSustaining>
+		
+		<shieldBlockIndirect>true</shieldBlockIndirect>
+		<shieldBlockDirect>true</shieldBlockDirect>
+		<shieldFireSupression>false</shieldFireSupression>
+		<shieldInterceptDropPod>true</shieldInterceptDropPod>
+		
+		<shieldStructuralIntegrityMode>false</shieldStructuralIntegrityMode>
+		
+		<shieldRechargeTickDelay>15</shieldRechargeTickDelay>
+		<shieldRecoverWarmup>900</shieldRecoverWarmup>
+		
+		<colourRed>0.0</colourRed>
+		<colourGreen>1.0</colourGreen>
+		<colourBlue>0.5</colourBlue>
+		<researchPrerequisites>
+			<li>SecurityIV</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+</Defs>

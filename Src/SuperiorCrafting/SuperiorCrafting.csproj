@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{2B680CEF-75B4-46CF-9054-6755BFC16F0E}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SuperiorCrafting</RootNamespace>
+    <AssemblyName>SuperiorCrafting</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\pesky\AppData\Roaming\ICSharpCode\SharpDevelop5\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>..\..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\RimWorld\Mods\SCB18Core\Assemblies\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>..\..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\RimWorld\Mods\SCB18Core\Assemblies\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Buildings\Building_CampFire.cs" />
+    <Compile Include="Buildings\Building_MultiTerraformingPump.cs" />
+    <Compile Include="Buildings\Building_SmallSolar.cs" />
+    <Compile Include="Buildings\Training_Facility.cs" />
+    <Compile Include="Comps\SC_Comp_FireOverlay.cs" />
+    <Compile Include="Comps\SC_Comp_ImmuneSystemBoost.cs" />
+    <Compile Include="Comps\SC_Comp_Terraforming.cs" />
+    <Compile Include="Designators\Designator_SandHarvesting.cs" />
+    <Compile Include="Harmony\Harmony patches.cs" />
+    <Compile Include="Harmony\Technology_Level_Upgrade.cs" />
+    <Compile Include="ITabs\ITab_TerraformingPump.cs" />
+    <Compile Include="ITabs\ITab_Training_Dummy.cs" />
+    <Compile Include="JobDrivers\JobDriver_HarvestSand.cs" />
+    <Compile Include="SCDefOf.cs" />
+    <Compile Include="SC_ReasearchUpgrades.cs" />
+    <Compile Include="Shields\Building_Shield.cs" />
+    <Compile Include="Shields\enumShieldStatus.cs" />
+    <Compile Include="Shields\ShieldBlendingParticle.cs" />
+    <Compile Include="Shields\ShieldBuildingThingDef.cs" />
+    <Compile Include="Shields\ShieldField.cs" />
+    <Compile Include="ShieldUtils\Graphics.cs" />
+    <Compile Include="ShieldUtils\ReflectionHelper.cs" />
+    <Compile Include="ShieldUtils\Vectors.cs" />
+    <Compile Include="WorkGivers\WorkGiver_MineHarvestSand.cs" />
+    <Compile Include="WorkGivers\WorkGiver_Training.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Harmony" />
+    <Folder Include="Designators" />
+    <Folder Include="JobDrivers" />
+    <Folder Include="Buildings" />
+    <Folder Include="Comps" />
+    <Folder Include="ITabs" />
+    <Folder Include="WorkGivers" />
+    <Folder Include="Shields" />
+    <Folder Include="ShieldUtils" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\Downloads\Release\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
